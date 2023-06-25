@@ -20,7 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.levp.immersivedotastats.domain.network.RetrofitInstance
 import com.levp.immersivedotastats.utils.HeroInfoMapper
-import com.levp.immersivedotastats.utils.singleViewModel
+import com.levp.immersivedotastats.utils.extensions.singleViewModel
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException

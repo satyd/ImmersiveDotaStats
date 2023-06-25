@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.utils
+package com.levp.immersivedotastats.utils.extensions
 
 import android.content.Context
 import android.content.ContextWrapper

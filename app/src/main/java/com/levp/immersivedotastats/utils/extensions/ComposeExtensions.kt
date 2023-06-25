@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.utils
+package com.levp.immersivedotastats.utils.extensions
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
