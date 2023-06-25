@@ -42,24 +42,7 @@ fun HeroesInfoScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(onClick = {
-            coroutineScope.launch {
-                val response = try {
-                    Log.i("hehe", "trying to get heroes response")
-                    RetrofitInstance.heroApi.getHeroStatsInfo()
-                } catch (e: IOException) {
-                    Log.e("hehe", "IOException")
-                    return@launch
-                } catch (e: HttpException) {
-                    Log.e("hehe", "no Internet")
-                    return@launch
-                }
-                if (response.isSuccessful && response.body() != null) {
-                    val list = response.body()!!
-                    heroViewEntityList.addAll(mapper.mapList(list))
-                } else {
-                    Log.w("hehe", "Response was not successful!!! code = ${response.code()}")
-                }
-            }
+            heroViewEntityList.addAll(viewModel.getHeroInfo())
         }) {
             Text(text = "get heroes")
         }

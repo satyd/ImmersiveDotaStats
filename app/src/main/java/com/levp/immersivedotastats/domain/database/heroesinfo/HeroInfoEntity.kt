@@ -10,8 +10,8 @@ data class HeroInfoEntity(
     val id: Int,
     val locName: String,
     val primaryAttribute: String,
-    @Ignore
-    val roles: List<String>,
+/*    @Ignore
+    val roles: List<String>,*/
     val localImage: String,
     val legs: Int
 )

@@ -8,4 +8,10 @@ class HeroInfoRepositoryImpl(
         dao.insertHeroInfo(heroInfo = heroInfoEntity)
     }
 
+    override suspend fun insertAllHeroesInfo(listOfHeroes: List<HeroInfoEntity>) {
+        listOfHeroes.forEach {
+            dao.insertHeroInfo(it)
+        }
+    }
+
 }

@@ -1,13 +1,13 @@
 package com.levp.immersivedotastats.presentation.heroesinfo
 
 import android.util.Log
-import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepository
 import com.levp.immersivedotastats.domain.network.RetrofitInstance
 import com.levp.immersivedotastats.utils.HeroInfoMapper
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
@@ -22,12 +22,13 @@ class HeroesInfoViewModel @Inject constructor(
         loadHeroesToDb()
     }
 
+    val heroInfoList: MutableStateFlow<List<HeroInfoViewEntity>> = MutableStateFlow(emptyList())
+
     fun loadHeroesToDb() {
         val mapper = HeroInfoMapper()
-        val heroViewEntityList = mutableStateListOf<HeroInfoViewEntity>()
         viewModelScope.launch {
             val response = try {
-                Log.i("hehe", "trying to get heroes response")
+                Log.i("hehe", "trying to get heroes response VM")
                 RetrofitInstance.heroApi.getHeroStatsInfo()
             } catch (e: IOException) {
                 Log.e("hehe", "IOException")
@@ -38,10 +39,15 @@ class HeroesInfoViewModel @Inject constructor(
             }
             if (response.isSuccessful && response.body() != null) {
                 val list = response.body()!!
-                heroViewEntityList.addAll(mapper.mapList(list))
+                heroInfoList.emit(mapper.mapList(list))
             } else {
                 Log.w("hehe", "Loading heroes failed! Code: ${response.code()}")
             }
         }
     }
+
+    fun getHeroInfo(): List<HeroInfoViewEntity> {
+        return heroInfoList.value
+    }
+
 }
