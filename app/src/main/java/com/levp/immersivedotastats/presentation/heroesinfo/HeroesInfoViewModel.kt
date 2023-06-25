@@ -2,7 +2,6 @@ package com.levp.immersivedotastats.presentation.heroesinfo
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.remember
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepository
