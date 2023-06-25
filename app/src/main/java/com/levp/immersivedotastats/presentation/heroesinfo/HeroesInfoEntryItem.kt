@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.presentation.heroinfo
+package com.levp.immersivedotastats.presentation.heroesinfo
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -22,7 +22,7 @@ import coil.compose.rememberAsyncImagePainter
 import com.levp.immersivedotastats.domain.network.Path
 
 @Composable
-fun HeroInfoEntryItem(viewEntity: HeroInfoViewEntity) {
+fun HeroesInfoEntryItem(viewEntity: HeroInfoViewEntity) {
     val baseImgUrl = Path.BASE_URL
     Row(
         modifier = Modifier

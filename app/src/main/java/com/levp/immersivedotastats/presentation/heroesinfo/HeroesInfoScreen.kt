@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.presentation.heroinfo
+package com.levp.immersivedotastats.presentation.heroesinfo
 
 import android.util.Log
 import androidx.compose.foundation.layout.Column
@@ -19,14 +19,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.levp.immersivedotastats.domain.network.RetrofitInstance
-import com.levp.immersivedotastats.domain.network.dto.heroinfo.HeroStatsInfoItem
 import com.levp.immersivedotastats.utils.HeroInfoMapper
+import com.levp.immersivedotastats.utils.singleViewModel
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
 
 @Composable
-fun HeroInfoScreen(modifier: Modifier = Modifier) {
+fun HeroesInfoScreen(
+    viewModel: HeroesInfoViewModel = singleViewModel(),
+    modifier: Modifier = Modifier
+) {
     val mapper = HeroInfoMapper()
     val heroViewEntityList = remember { mutableStateListOf<HeroInfoViewEntity>() }
 
@@ -65,7 +68,7 @@ fun HeroInfoScreen(modifier: Modifier = Modifier) {
             itemsIndexed(
                 items = heroViewEntityList,
                 key = { _, item -> item.id }) { index, item ->
-                HeroInfoEntryItem(viewEntity = item)
+                HeroesInfoEntryItem(viewEntity = item)
                 if (index != heroViewEntityList.lastIndex) {
                     Spacer(modifier = Modifier.height(8.dp))
                 }

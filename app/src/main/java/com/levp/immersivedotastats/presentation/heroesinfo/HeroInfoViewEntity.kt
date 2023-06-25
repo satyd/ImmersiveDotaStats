@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.presentation.heroinfo
+package com.levp.immersivedotastats.presentation.heroesinfo
 
 data class HeroInfoViewEntity(
     val id: Int,

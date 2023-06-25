@@ -85,6 +85,8 @@ dependencies {
 
     //Coil for images by url
     implementation "io.coil-kt:coil-compose:2.2.2"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1"
 }
 // Allow references to generated code
 kapt {
