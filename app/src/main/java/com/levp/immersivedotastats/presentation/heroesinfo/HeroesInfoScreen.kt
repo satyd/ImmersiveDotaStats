@@ -1,6 +1,5 @@
 package com.levp.immersivedotastats.presentation.heroesinfo
 
-import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -14,16 +13,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.levp.immersivedotastats.domain.network.RetrofitInstance
-import com.levp.immersivedotastats.utils.HeroInfoMapper
 import com.levp.immersivedotastats.utils.extensions.singleViewModel
-import kotlinx.coroutines.launch
-import retrofit2.HttpException
-import java.io.IOException
 
 @Composable
 fun HeroesInfoScreen(

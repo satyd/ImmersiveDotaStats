@@ -9,7 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.levp.immersivedotastats.presentation.heroesinfo.HeroesInfoScreen
 import com.levp.immersivedotastats.presentation.mainmenu.MainMenuScreen
-import com.levp.immersivedotastats.presentation.userinfo.PlayerInfoScreen
+import com.levp.immersivedotastats.presentation.userinfo.UserInfoScreen
 
 @Composable
 fun MainNavHost(
@@ -25,7 +25,7 @@ fun MainNavHost(
             MainMenuScreen(navController = navController)
         }
         composable(route = NavDestinations.UserInfo.path){
-            PlayerInfoScreen()
+            UserInfoScreen()
         }
         composable(route = NavDestinations.HeroesInfo.path){
             HeroesInfoScreen()

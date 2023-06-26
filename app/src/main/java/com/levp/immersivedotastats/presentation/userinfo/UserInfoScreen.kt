@@ -1,6 +1,5 @@
 package com.levp.immersivedotastats.presentation.userinfo
 
-import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,25 +12,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
-import com.levp.immersivedotastats.domain.network.RetrofitInstance
-import kotlinx.coroutines.launch
-import retrofit2.HttpException
-import java.io.IOException
+import com.levp.immersivedotastats.utils.extensions.singleViewModel
 
 @Composable
-fun PlayerInfoScreen(modifier: Modifier = Modifier) {
-    var text by rememberSaveable { mutableStateOf("350885037") }
-    var playerInfo by remember { mutableStateOf("there have to be player info") }
-    var imageUrl by remember { mutableStateOf("https://www.example.com/image.jpg") }
-
-    val coroutineScope = rememberCoroutineScope()
+fun UserInfoScreen(
+    viewModel: UserInfoViewModel = singleViewModel(),
+    modifier: Modifier = Modifier
+) {
+    val imageUrl by remember { mutableStateOf(viewModel.imageUrl) }
+    var text by rememberSaveable { mutableStateOf("") }
+    val playerInfo by remember { mutableStateOf(viewModel.playerInfo) }
 
     Column(
         modifier = Modifier
@@ -52,29 +48,12 @@ fun PlayerInfoScreen(modifier: Modifier = Modifier) {
             label = { Text("Label") }
         )
         Button(onClick = {
-            coroutineScope.launch {
-                val response = try {
-                    Log.i("hehe","trying to get response with $text")
-                    RetrofitInstance.playerApi.getPlayerById(text.toInt())
-                } catch (e: IOException) {
-                    Log.e("hehe", "IOException")
-                    return@launch
-                } catch (e: HttpException) {
-                    Log.e("hehe", "no Internet")
-                    return@launch
-                }
-                if(response.isSuccessful && response.body() != null){
-                    playerInfo = response.body()!!.toString()
-                    imageUrl = response.body()!!.profile.avatarFull
-                } else {
-                    Log.w("hehe","Response was not successful!!! code = ${response.code()}")
-                }
-            }
+            viewModel.loadUserInfo()
         }) {
-            Text(text = "Get Player Data")
+            Text(text = "Get User Data")
         }
         Text(
-            text = playerInfo,
+            text = viewModel.getUserInfo(),
             modifier = modifier
         )
     }

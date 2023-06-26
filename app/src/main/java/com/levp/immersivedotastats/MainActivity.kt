@@ -12,13 +12,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.levp.immersivedotastats.presentation.MainNavHost
 import com.levp.immersivedotastats.ui.theme.ImmersiveDotaStatsTheme
-import com.levp.immersivedotastats.presentation.userinfo.PlayerInfoScreen
+import com.levp.immersivedotastats.presentation.userinfo.UserInfoScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    //private val heroInfoViewModel: HeroesInfoViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -41,6 +40,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     ImmersiveDotaStatsTheme {
-        PlayerInfoScreen()
+        UserInfoScreen()
     }
 }
