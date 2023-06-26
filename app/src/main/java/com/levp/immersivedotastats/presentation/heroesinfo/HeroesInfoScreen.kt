@@ -30,10 +30,7 @@ fun HeroesInfoScreen(
     viewModel: HeroesInfoViewModel = singleViewModel(),
     modifier: Modifier = Modifier
 ) {
-    val mapper = HeroInfoMapper()
     val heroViewEntityList = remember { mutableStateListOf<HeroInfoViewEntity>() }
-
-    val coroutineScope = rememberCoroutineScope()
 
     Column(
         modifier = Modifier

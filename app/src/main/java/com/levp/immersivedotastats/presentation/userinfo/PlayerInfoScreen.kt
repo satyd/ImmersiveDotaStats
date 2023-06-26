@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.presentation
+package com.levp.immersivedotastats.presentation.userinfo
 
 import android.util.Log
 import androidx.compose.foundation.Image
