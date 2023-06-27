@@ -18,8 +18,9 @@ class UserInfoViewModel @Inject constructor(): ViewModel() {
     var playerInfo = MutableStateFlow("there have to be user info")
     var imageUrl = MutableStateFlow("https://www.example.com/image.jpg")
 
-    fun loadUserInfo() {
+    fun loadUserInfo(newUserId: String) {
         viewModelScope.launch {
+            userId.emit(newUserId)
             val response = try {
                 Log.i("hehe", "trying to get response with ${userId.value}")
                 RetrofitInstance.playerApi.getPlayerById(userId.value.toInt())

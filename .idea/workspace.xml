@@ -9,14 +9,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d223134-e9bc-46cb-b7e7-c139095c81f4" name="Changes" comment="added basic navigation and main menu prototype">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoViewModel.kt" afterDir="false" />
+    <list default="true" id="6d223134-e9bc-46cb-b7e7-c139095c81f4" name="Changes" comment="added userinfo vm and small cleanup">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoHeader.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoHeaderState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/dotaplus_sub.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/rank_immortal.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/MainNavHost.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/MainNavHost.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/mainmenu/MainMenuButton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/mainmenu/MainMenuButton.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/mainmenu/MainMenuScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/mainmenu/MainMenuScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/PlayerInfoScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/network/dto/playerinfo/PlayerInfoRaw.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/network/dto/playerinfo/PlayerInfoRaw.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/network/dto/playerinfo/Profile.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/network/dto/playerinfo/Profile.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +35,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Object" />
-        <option value="Kotlin Data Class" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Data Class" />
       </list>
     </option>
   </component>
@@ -61,8 +63,8 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cidr.known.project.marker": "true",
-    "last_directory_selection": "D:/Android/LearnProjects/ImmersiveDotaStats/app/src/main/res/mipmap-hdpi",
-    "last_opened_file_path": "D:/Android/LearnProjects/ImmersiveDotaStats/app/src/main/res/mipmap-hdpi",
+    "last_directory_selection": "D:/Android/LearnProjects/ImmersiveDotaStats/app/src/main/res/drawable",
+    "last_opened_file_path": "D:/Android/LearnProjects/ImmersiveDotaStats/app/src/main/res/drawable",
     "project.structure.last.edited": "Suggestions",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
@@ -75,6 +77,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\res\drawable" />
       <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\res\mipmap-hdpi" />
       <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\java\com\levp\immersivedotastats\presentation" />
       <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\java\com\levp\immersivedotastats\core" />
@@ -256,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687793995736</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added userinfo vm and small cleanup">
+      <created>1687795301403</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687795301403</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -294,6 +304,7 @@
     <MESSAGE value="fix few detekt issues" />
     <MESSAGE value="move loading to viemodel, fix room and hilt components" />
     <MESSAGE value="added basic navigation and main menu prototype" />
-    <option name="LAST_COMMIT_MESSAGE" value="added basic navigation and main menu prototype" />
+    <MESSAGE value="added userinfo vm and small cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="added userinfo vm and small cleanup" />
   </component>
 </project>

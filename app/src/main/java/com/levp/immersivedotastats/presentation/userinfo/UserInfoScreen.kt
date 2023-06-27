@@ -1,9 +1,8 @@
 package com.levp.immersivedotastats.presentation.userinfo
 
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -16,30 +15,24 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import coil.compose.rememberAsyncImagePainter
 import com.levp.immersivedotastats.utils.extensions.singleViewModel
 
 @Composable
 fun UserInfoScreen(
+    modifier: Modifier = Modifier,
     viewModel: UserInfoViewModel = singleViewModel(),
-    modifier: Modifier = Modifier
 ) {
-    val imageUrl by remember { mutableStateOf(viewModel.imageUrl) }
-    var text by rememberSaveable { mutableStateOf("") }
+    var text by rememberSaveable { mutableStateOf("350885037") }
     val playerInfo by remember { mutableStateOf(viewModel.playerInfo) }
 
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .wrapContentHeight(),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Top
     ) {
-        Image(
-            painter = rememberAsyncImagePainter(imageUrl),
-            contentDescription = null,
-            modifier = Modifier.size(128.dp)
-        )
+        UserInfoHeader(getEmptyUserHeaderState())
         TextField(
             value = text,
             onValueChange = {
@@ -48,7 +41,7 @@ fun UserInfoScreen(
             label = { Text("Label") }
         )
         Button(onClick = {
-            viewModel.loadUserInfo()
+            viewModel.loadUserInfo(text)
         }) {
             Text(text = "Get User Data")
         }
@@ -57,4 +50,11 @@ fun UserInfoScreen(
             modifier = modifier
         )
     }
+}
+
+fun getEmptyUserHeaderState(): UserInfoHeaderState {
+    return UserInfoHeaderState(
+        profilePicLink = "https://avatars.steamstatic.com/7678ccafdd13eef1479d03f82ad436e290f4faaa_full.jpg",
+        profileName = "Catoracle"
+    )
 }
