@@ -29,7 +29,7 @@ import com.levp.immersivedotastats.R
 
 @Composable
 fun UserInfoHeader(
-    userInfoHeaderState: UserInfoHeaderState
+    uiState: UserInfoState
 ) {
     Row(
         modifier = Modifier
@@ -38,11 +38,11 @@ fun UserInfoHeader(
             .background(color = Color.LightGray)
     ) {
         Icon(
-            painter = rememberAsyncImagePainter(userInfoHeaderState.profilePicLink),
+            painter = rememberAsyncImagePainter(uiState.profilePicLink),
             contentDescription = null,
-            modifier = Modifier
+/*            modifier = Modifier
                 .size(width = 96.dp, height = 96.dp)
-                .padding(4.dp)
+                .padding(4.dp)*/
         )
         Spacer(modifier = Modifier.width(8.dp))
         Row(modifier = Modifier.fillMaxSize(), horizontalArrangement = Arrangement.SpaceBetween) {
@@ -53,13 +53,13 @@ fun UserInfoHeader(
                     .padding(top = 8.dp)
             ) {
                 Text(
-                    text = userInfoHeaderState.profileName,
+                    text = uiState.profileName,
                     fontSize = 24.sp,
                     fontWeight = FontWeight.Bold
                 )
             }
             Row(modifier = Modifier.fillMaxHeight(), verticalAlignment = Alignment.CenterVertically) {
-                if (userInfoHeaderState.isDotaPlusSub) {
+                if (uiState.isDotaPlusSub) {
                     Image(
                         painter = painterResource(id = R.drawable.dotaplus_sub),
                         contentDescription = null,
@@ -67,7 +67,7 @@ fun UserInfoHeader(
                     )
                 }
                 Image(
-                    painter = painterResource(id = R.drawable.rank_immortal),
+                    painter = painterResource(id = R.drawable.no_rank_medal),
                     contentDescription = null,
                     modifier = Modifier.size(48.dp)
                 )

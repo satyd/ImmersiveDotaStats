@@ -3,27 +3,33 @@ package com.levp.immersivedotastats.presentation.userinfo
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.levp.immersivedotastats.App
 import com.levp.immersivedotastats.domain.network.RetrofitInstance
+import com.levp.immersivedotastats.domain.network.dto.playerinfo.Profile
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
 @HiltViewModel
-class UserInfoViewModel @Inject constructor(): ViewModel() {
+class UserInfoViewModel @Inject constructor() : ViewModel() {
 
-    var userId: MutableStateFlow<String> = MutableStateFlow("350885037")
-    var playerInfo = MutableStateFlow("there have to be user info")
-    var imageUrl = MutableStateFlow("https://www.example.com/image.jpg")
+    companion object {
+        const val USER_ID = "USER_ID"
+        const val IS_USER_ID_SAVED = "IS_USER_ID_SAVED"
+    }
+
+    private val mutableUiState = MutableStateFlow(UserInfoState.getEmpty())
+    val uiState: StateFlow<UserInfoState> = mutableUiState
 
     fun loadUserInfo(newUserId: String) {
         viewModelScope.launch {
-            userId.emit(newUserId)
             val response = try {
-                Log.i("hehe", "trying to get response with ${userId.value}")
-                RetrofitInstance.playerApi.getPlayerById(userId.value.toInt())
+                Log.i("hehe", "trying to get response with $newUserId")
+                RetrofitInstance.playerApi.getPlayerById(newUserId)
             } catch (e: IOException) {
                 Log.e("hehe", "IOException")
                 return@launch
@@ -32,15 +38,25 @@ class UserInfoViewModel @Inject constructor(): ViewModel() {
                 return@launch
             }
             if (response.isSuccessful && response.body() != null) {
-                playerInfo.emit(response.body()!!.toString())
-                imageUrl.emit(response.body()!!.profile.avatarFull)
+                val profile = response.body()!!.profile
+                setUiStateFromProfileData(profile = profile, userId = newUserId)
+                App.instance.preferencesManager.saveString(USER_ID, newUserId)
+                App.instance.preferencesManager.saveBoolean(IS_USER_ID_SAVED, true)
             } else {
                 Log.w("hehe", "Response was not successful!!! code = ${response.code()}")
             }
         }
     }
 
-    fun getUserInfo(): String {
-        return playerInfo.value
+    private suspend fun setUiStateFromProfileData(profile: Profile, userId: String) {
+        mutableUiState.emit(
+            uiState.value.copy(
+                userId = userId,
+                profilePicLink = profile.avatarFull,
+                profileName = profile.personaName,
+                countryCode = profile.locCountryCode,
+                isDotaPlusSub = profile.plus
+            )
+        )
     }
 }

@@ -9,6 +9,6 @@ import retrofit2.http.Path
 interface PlayerApi {
 
     @GET("/api/players/{player_id}?json")
-    suspend fun getPlayerById(@Path("player_id") id : Int) : Response<PlayerInfoRaw>
+    suspend fun getPlayerById(@Path("player_id") id : String) : Response<PlayerInfoRaw>
 
 }
