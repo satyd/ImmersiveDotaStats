@@ -1,0 +1,16 @@
+{
+  "name": "Stratz API GraphQL Schema",
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "https://api.stratz.com/graphql",
+        "headers": {
+          "user-agent": "JS GraphQL",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJodHRwczovL3N0ZWFtY29tbXVuaXR5LmNvbS9vcGVuaWQvaWQvNzY1NjExOTgzMTExNTA3NjUiLCJ1bmlxdWVfbmFtZSI6ImtpbmRhIGN1cnNlZCAoZ29uZSBzdXMpIiwiU3ViamVjdCI6IjAxM2U4OGMyLTIxYTUtNDhkMi1hNDg5LWNlZDljNjViOWU2OCIsIlN0ZWFtSWQiOiIzNTA4ODUwMzciLCJuYmYiOjE2NzI4MjA2MzcsImV4cCI6MTcwNDM1NjYzNywiaWF0IjoxNjcyODIwNjM3LCJpc3MiOiJodHRwczovL2FwaS5zdHJhdHouY29tIn0.gJSPpya5RycfHKjBfgHnYzEaEu3V6HiyRHHY2hJQoAA"
+        },
+        "introspect": false
+      }
+    }
+  }
+}
