@@ -10,12 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d223134-e9bc-46cb-b7e7-c139095c81f4" name="Changes" comment="few more resources and small refactor">
-      <change afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/graphql/com/levp/immersivedotastats/.graphqlconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/graphql/com/levp/immersivedotastats/schema.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/graphql/com/levp/StratzApi.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/graphql/com/levp/graphql.config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/data/ApolloStratzApiClient.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/graphql/com/levp/immersivedotastats/.graphqlconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/graphql/com/levp/immersivedotastats/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/graphql/com/levp/schema.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +49,8 @@
         <option value="Kotlin File" />
         <option value="Kotlin Data Class" />
         <option value="Kotlin Object" />
-        <option value="Kotlin Class" />
         <option value="GraphQL File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -64,22 +68,22 @@
     <option name="autoscrollFromSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;D:/Android/LearnProjects/ImmersiveDotaStats/app/src/main/res/drawable&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Android/LearnProjects/ImmersiveDotaStats/app/src/main/res/drawable&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Suggestions&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cidr.known.project.marker": "true",
+    "com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable": "SELECTIVE",
+    "last_directory_selection": "D:/Android/LearnProjects/ImmersiveDotaStats/app/src/main/res/drawable",
+    "last_opened_file_path": "D:/Android/LearnProjects/ImmersiveDotaStats/app/src/main/res/drawable",
+    "project.structure.last.edited": "Dependencies",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "build.tools"
   }
-}</component>
+}]]></component>
   <component name="PsdUISettings">
     <option name="BUILD_VARIANTS_TAB" value="Build Types" />
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
@@ -92,11 +96,11 @@
       <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\java\com\levp\immersivedotastats\core" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\graphql" />
+      <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\graphql\com\levp" />
       <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\graphql\com\levp\immersivedotastats" />
       <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\java\com\levp\immersivedotastats\presentation\userinfo" />
       <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\java\com\levp\immersivedotastats\presentation\mainmenu" />
-      <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\java\com\levp\immersivedotastats\utils\extensions" />
-      <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\res\mipmap-hdpi" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.levp.immersivedotastats.domain.database.heroesinfo" />
@@ -106,7 +110,7 @@
       <recent name="com.levp.immersivedotastats.data.network.interfaces" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ImmersiveDotaStats [:app:downloadApolloSchema --endpoint='https://countries.trevorblades.com/graphql' --schema=app/src/main/graphql/com/levp/schema.graphql]">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="Immersive_Dota_Stats.app.main" />
       <option name="DEPLOY" value="true" />
@@ -223,7 +227,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ImmersiveDotaStats [:app:downloadApolloSchema --endpoint='https://api.stratz.com' --schema=app/src/main/graphql/com/levp/schema.graphql]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ImmersiveDotaStats [--clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -234,9 +238,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":app:downloadApolloSchema" />
-            <option value="--endpoint='https://api.stratz.com'" />
-            <option value="--schema=app/src/main/graphql/com/levp/schema.graphql" />
+            <option value="--clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -340,22 +342,15 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ImmersiveDotaStats [--clean]" />
         <item itemvalue="Gradle.ImmersiveDotaStats [:app:downloadApolloSchema --endpoint='https://countries.trevorblades.com/graphql' --schema=app/src/main/graphql/com/levp/schema.graphql]" />
         <item itemvalue="Gradle.ImmersiveDotaStats [:app:downloadApolloSchema --endpoint='https://api.stratz.com/graphql' --schema=app/src/main/graphql/com/levp/schema.graphql]" />
         <item itemvalue="Gradle.ImmersiveDotaStats [:app:downloadApolloSchema --endpoint='https://api.stratz.com/graphiql' --schema=app/src/main/graphql/com/levp/schema.graphql]" />
         <item itemvalue="Gradle.ImmersiveDotaStats [:app:downloadApolloSchema --endpoint='https://api.stratz.com/graphiql/' --schema=app/src/main/graphql/com/levp/schema.graphql]" />
-        <item itemvalue="Gradle.ImmersiveDotaStats [:app:downloadApolloSchema --endpoint='https://api.stratz.com' --schema=app/src/main/graphql/com/levp/schema.graphql]" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="StandaloneScriptsStorage">
-    <option name="files">
-      <set>
-        <option value="$PROJECT_DIR$/app/build.gradle.kts" />
-      </set>
-    </option>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="6d223134-e9bc-46cb-b7e7-c139095c81f4" name="Changes" comment="" />

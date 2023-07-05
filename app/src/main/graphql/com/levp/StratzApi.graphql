@@ -1,0 +1,7 @@
+query AccountInfo($accountId: Long!){
+    player(steamAccountId: $accountId){
+        steamAccount {
+            seasonRank
+        }
+    }
+}

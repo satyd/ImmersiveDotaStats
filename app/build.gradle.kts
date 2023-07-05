@@ -1,14 +1,14 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
-    id("com.google.dagger.hilt.android")
-    id("com.apollographql.apollo3").version("4.0.0-alpha.1")
+    id("kotlin-android")
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
+    id("com.apollographql.apollo3") version "3.8.2"
 }
 
 apollo {
     service("service") {
-        packageName.set("com.levp.immersivedotastats")
+        packageName.set("com.levp")
     }
 }
 
@@ -90,6 +90,7 @@ dependencies {
     //Dagger - Hilt
     implementation("com.google.dagger:hilt-android:2.46.1")
     kapt("com.google.dagger:hilt-compiler:2.46.1")
+    kapt("androidx.hilt:hilt-compiler:1.0.0")
 
     //Coil for images by url
     implementation("io.coil-kt:coil-compose:2.2.2")
@@ -105,8 +106,9 @@ dependencies {
     //Compose Navigation
     implementation("androidx.navigation:navigation-compose:2.6.0")
 
-    implementation("com.apollographql.apollo:apollo-runtime:4.0.0-alpha.1")
-    implementation("com.apollographql.apollo:apollo-coroutines-support:4.0.0-alpha.1")
+    implementation("com.apollographql.apollo3:apollo-runtime:3.8.2")
+    implementation("com.apollographql.apollo3:apollo-normalized-cache-sqlite:3.8.2")
+    //implementation("com.apollographql.apollo3:apollo-coroutines-support:3.8.2")
 }
 // Allow references to generated code
 kapt {

@@ -1,0 +1,9 @@
+schema: schema.graphqls
+extensions:
+  endpoints:
+    Default GraphQL Endpoint:
+      url: https://api.stratz.com/graphql
+      headers:
+        user-agent: JS GraphQL
+        
+      introspect: false
