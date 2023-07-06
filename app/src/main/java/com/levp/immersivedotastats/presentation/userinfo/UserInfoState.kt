@@ -1,20 +1,18 @@
 package com.levp.immersivedotastats.presentation.userinfo
 
 import androidx.compose.runtime.Stable
+import com.levp.immersivedotastats.domain.network.dto.UserInfo
 
 @Stable
 data class UserInfoState(
-    var userId: String = "",
-    var profilePicLink: String,
-    var profileName: String,
-    var countryCode: String = "",
-    var isDotaPlusSub: Boolean = false
-) {
-    companion object{
+    var userInfo: UserInfo,
+    val isLoading: Boolean = false,
+
+    ) {
+    companion object {
         fun getEmpty(): UserInfoState {
             return UserInfoState(
-                profilePicLink = "https://http.cat/102",
-                profileName = "Catoracle"
+                userInfo = UserInfo.getEmpty(),
             )
         }
     }

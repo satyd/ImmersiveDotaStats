@@ -33,9 +33,9 @@ fun UserInfoScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
-        if(App.instance.preferencesManager.getBoolean(UserInfoViewModel.IS_USER_ID_SAVED)) {
-            UserInfoHeader(userInfoState)
-        }
+        //if(App.instance.preferencesManager.getBoolean(UserInfoViewModel.IS_USER_ID_SAVED)) {
+        UserInfoHeader(userInfoState)
+        //}
         TextField(
             value = userId,
             onValueChange = {
@@ -48,6 +48,7 @@ fun UserInfoScreen(
         }) {
             Text(text = "Get User Data")
         }
+        Text(text = userInfoState.userInfo.toString().replace(", ", "\n"))
     }
 }
 

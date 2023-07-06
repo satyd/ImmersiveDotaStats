@@ -24,10 +24,10 @@ fun MainNavHost(
         composable(route = NavDestinations.MainMenu.path){
             MainMenuScreen(navController = navController)
         }
-        composable(route = NavDestinations.UserInfo.path){
+        composable(route = NavDestinations.UserInfoScreen.path){
             UserInfoScreen()
         }
-        composable(route = NavDestinations.HeroesInfo.path){
+        composable(route = NavDestinations.HeroesInfoScreen.path){
             HeroesInfoScreen()
         }
     }
@@ -39,6 +39,6 @@ class NavigationGraph(private val navController: NavController) {
 
 enum class NavDestinations(val path: String) {
     MainMenu("main_menu"),
-    UserInfo("user_info"),
-    HeroesInfo("heroes_info")
+    UserInfoScreen("user_info"),
+    HeroesInfoScreen("heroes_info")
 }

@@ -5,12 +5,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.levp.immersivedotastats.App
 import com.levp.immersivedotastats.domain.network.RetrofitInstance
+import com.levp.immersivedotastats.domain.network.dto.UserInfo
 import com.levp.immersivedotastats.domain.network.dto.playerinfo.Profile
 import com.levp.immersivedotastats.domain.usecases.GetUserInfoUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
@@ -32,7 +34,15 @@ class UserInfoViewModel @Inject constructor(
     fun loadUserInfoStratz(newUserId: String) {
         val userId = newUserId.toLong()
         viewModelScope.launch {
-            mutableUiState.emit(getUserInfoUseCase.execute(userId))
+            mutableUiState.update {
+                it.copy(isLoading = true)
+            }
+            mutableUiState.update {
+                it.copy(
+                    userInfo = getUserInfoUseCase.execute(userId),
+                    isLoading = false
+                )
+            }
         }
     }
 
@@ -59,26 +69,18 @@ class UserInfoViewModel @Inject constructor(
         }
     }
 
-    private suspend fun setUiStateFromAccountData(profile: Profile, userId: String) {
-        mutableUiState.emit(
-            uiState.value.copy(
-                userId = userId,
-                profilePicLink = profile.avatarFull,
-                profileName = profile.personaName,
-                countryCode = profile.locCountryCode,
-                isDotaPlusSub = profile.plus
-            )
-        )
-    }
-
     private suspend fun setUiStateFromProfileData(profile: Profile, userId: String) {
         mutableUiState.emit(
             uiState.value.copy(
-                userId = userId,
-                profilePicLink = profile.avatarFull,
-                profileName = profile.personaName,
-                countryCode = profile.locCountryCode,
-                isDotaPlusSub = profile.plus
+                userInfo = UserInfo(
+                    userId = userId,
+                    userIcon = profile.avatarFull,
+                    userName = profile.personaName,
+                    countryCode = profile.locCountryCode,
+                    isDotaPlusSub = profile.plus,
+                    matches = 0,
+                    wins = 0
+                )
             )
         )
     }

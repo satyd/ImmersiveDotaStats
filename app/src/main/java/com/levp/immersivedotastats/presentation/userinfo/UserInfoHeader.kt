@@ -24,25 +24,29 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.net.toUri
 import coil.compose.rememberAsyncImagePainter
 import com.levp.immersivedotastats.R
+import com.levp.immersivedotastats.presentation.common.WinLossText
 
 @Composable
 fun UserInfoHeader(
     uiState: UserInfoState
 ) {
+    val userInfo = uiState.userInfo
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .height(104.dp)
             .background(color = Color.LightGray)
     ) {
+        val userIcon = "https://http.cat/102"
         Icon(
-            painter = rememberAsyncImagePainter(uiState.profilePicLink),
+            painter = rememberAsyncImagePainter(model = userInfo.userIcon),
             contentDescription = null,
-/*            modifier = Modifier
-                .size(width = 96.dp, height = 96.dp)
-                .padding(4.dp)*/
+            modifier = Modifier
+                .size(80.dp)
+                //.padding(4.dp)
         )
         Spacer(modifier = Modifier.width(8.dp))
         Row(modifier = Modifier.fillMaxSize(), horizontalArrangement = Arrangement.SpaceBetween) {
@@ -53,13 +57,20 @@ fun UserInfoHeader(
                     .padding(top = 8.dp)
             ) {
                 Text(
-                    text = uiState.profileName,
+                    text = userInfo.userName,
                     fontSize = 24.sp,
                     fontWeight = FontWeight.Bold
                 )
+                val loses = (userInfo.matches-userInfo.wins)
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(text = "Matches: ${userInfo.matches}", fontSize = 12.sp)
+                Spacer(modifier = Modifier.height(4.dp))
+                WinLossText(winCount = userInfo.wins, lossCount = loses)
+                Spacer(modifier = Modifier.height(4.dp))
+
             }
             Row(modifier = Modifier.fillMaxHeight(), verticalAlignment = Alignment.CenterVertically) {
-                if (uiState.isDotaPlusSub) {
+                if (userInfo.isDotaPlusSub) {
                     Image(
                         painter = painterResource(id = R.drawable.dotaplus_sub),
                         contentDescription = null,

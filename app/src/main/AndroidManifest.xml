@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/doka2"
         android:supportsRtl="true"
         android:theme="@style/Theme.ImmersiveDotaStats"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
