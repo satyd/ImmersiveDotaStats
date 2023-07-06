@@ -10,18 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d223134-e9bc-46cb-b7e7-c139095c81f4" name="Changes" comment="few more resources and small refactor">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/ApolloStratzApiClient.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/network/interfaces/StratzApiClient.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/usecases/GetUserInfoUseCase.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/utils/StratzApiKey.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/utils/StratzApiMappers.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/graphql/com/levp/StratzApi.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/graphql/com/levp/StratzApi.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/graphql/com/levp/schema.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/graphql/com/levp/schema.graphqls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/di/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/di/AppModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/data/ApolloStratzApiClient.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
