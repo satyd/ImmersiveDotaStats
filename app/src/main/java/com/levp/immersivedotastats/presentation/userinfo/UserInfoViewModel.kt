@@ -6,16 +6,20 @@ import androidx.lifecycle.viewModelScope
 import com.levp.immersivedotastats.App
 import com.levp.immersivedotastats.domain.network.RetrofitInstance
 import com.levp.immersivedotastats.domain.network.dto.playerinfo.Profile
+import com.levp.immersivedotastats.domain.usecases.GetUserInfoUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
 @HiltViewModel
-class UserInfoViewModel @Inject constructor() : ViewModel() {
+class UserInfoViewModel @Inject constructor(
+    private val getUserInfoUseCase: GetUserInfoUseCase
+) : ViewModel() {
 
     companion object {
         const val USER_ID = "USER_ID"
@@ -23,9 +27,16 @@ class UserInfoViewModel @Inject constructor() : ViewModel() {
     }
 
     private val mutableUiState = MutableStateFlow(UserInfoState.getEmpty())
-    val uiState: StateFlow<UserInfoState> = mutableUiState
+    val uiState = mutableUiState.asStateFlow()
 
-    fun loadUserInfo(newUserId: String) {
+    fun loadUserInfoStratz(newUserId: String) {
+        val userId = newUserId.toLong()
+        viewModelScope.launch {
+            mutableUiState.emit(getUserInfoUseCase.execute(userId))
+        }
+    }
+
+    fun loadUserInfoOpenDota(newUserId: String) {
         viewModelScope.launch {
             val response = try {
                 Log.i("hehe", "trying to get response with $newUserId")
@@ -46,6 +57,18 @@ class UserInfoViewModel @Inject constructor() : ViewModel() {
                 Log.w("hehe", "Response was not successful!!! code = ${response.code()}")
             }
         }
+    }
+
+    private suspend fun setUiStateFromAccountData(profile: Profile, userId: String) {
+        mutableUiState.emit(
+            uiState.value.copy(
+                userId = userId,
+                profilePicLink = profile.avatarFull,
+                profileName = profile.personaName,
+                countryCode = profile.locCountryCode,
+                isDotaPlusSub = profile.plus
+            )
+        )
     }
 
     private suspend fun setUiStateFromProfileData(profile: Profile, userId: String) {

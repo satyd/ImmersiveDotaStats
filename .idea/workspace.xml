@@ -10,16 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d223134-e9bc-46cb-b7e7-c139095c81f4" name="Changes" comment="few more resources and small refactor">
-      <change afterPath="$PROJECT_DIR$/app/src/main/graphql/com/levp/StratzApi.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/graphql/com/levp/graphql.config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/data/ApolloStratzApiClient.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/ApolloStratzApiClient.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/network/interfaces/StratzApiClient.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/usecases/GetUserInfoUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/utils/StratzApiKey.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/utils/StratzApiMappers.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/graphql/com/levp/immersivedotastats/.graphqlconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/graphql/com/levp/immersivedotastats/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/graphql/com/levp/schema.graphqls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/graphql/com/levp/StratzApi.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/graphql/com/levp/StratzApi.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/graphql/com/levp/schema.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/graphql/com/levp/schema.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/di/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/di/AppModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/data/ApolloStratzApiClient.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/userinfo/UserInfoViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,12 +47,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Data Class" />
+        <option value="GraphQL File" />
         <option value="Kotlin Interface" />
         <option value="Kotlin File" />
-        <option value="Kotlin Data Class" />
-        <option value="Kotlin Object" />
-        <option value="GraphQL File" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>
@@ -68,22 +70,22 @@
     <option name="autoscrollFromSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cidr.known.project.marker": "true",
-    "com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable": "SELECTIVE",
-    "last_directory_selection": "D:/Android/LearnProjects/ImmersiveDotaStats/app/src/main/res/drawable",
-    "last_opened_file_path": "D:/Android/LearnProjects/ImmersiveDotaStats/app/src/main/res/drawable",
-    "project.structure.last.edited": "Dependencies",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "build.tools"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable&quot;: &quot;SELECTIVE&quot;,
+    &quot;last_directory_selection&quot;: &quot;D:/Android/LearnProjects/ImmersiveDotaStats/app/src/main/res/drawable&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Android/LearnProjects/ImmersiveDotaStats/app/src/main/res/drawable&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Dependencies&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;
   }
-}]]></component>
+}</component>
   <component name="PsdUISettings">
     <option name="BUILD_VARIANTS_TAB" value="Build Types" />
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
@@ -103,6 +105,8 @@
       <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\java\com\levp\immersivedotastats\presentation\mainmenu" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.levp.immersivedotastats.domain.network.interfaces" />
+      <recent name="com.levp.immersivedotastats.domain" />
       <recent name="com.levp.immersivedotastats.domain.database.heroesinfo" />
       <recent name="com.levp.immersivedotastats.data.network.dto.playerinfo" />
     </key>

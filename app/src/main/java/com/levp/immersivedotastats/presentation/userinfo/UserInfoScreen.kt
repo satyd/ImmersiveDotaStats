@@ -11,7 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -25,7 +24,7 @@ fun UserInfoScreen(
     viewModel: UserInfoViewModel = singleViewModel(),
 ) {
     val userInfoState by viewModel.uiState.collectAsState()
-    var text by rememberSaveable { mutableStateOf("350885037") }
+    var userId by rememberSaveable { mutableStateOf("350885037") }
 
     Column(
         modifier = Modifier
@@ -38,14 +37,14 @@ fun UserInfoScreen(
             UserInfoHeader(userInfoState)
         }
         TextField(
-            value = text,
+            value = userId,
             onValueChange = {
-                text = it
+                userId = it
             },
             label = { Text("Label") }
         )
         Button(onClick = {
-            viewModel.loadUserInfo(text)
+            viewModel.loadUserInfoStratz(userId)
         }) {
             Text(text = "Get User Data")
         }

@@ -1,6 +1,12 @@
-query AccountInfo($accountId: Long!){
-    player(steamAccountId: $accountId){
+query AccountInfo($accountId: Long!) {
+    player(steamAccountId: $accountId) {
+        matchCount
+        winCount
         steamAccount {
+            id
+            name
+            avatar
+            isDotaPlusSubscriber
             seasonRank
         }
     }
