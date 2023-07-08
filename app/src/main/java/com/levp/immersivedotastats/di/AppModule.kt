@@ -8,6 +8,7 @@ import com.levp.immersivedotastats.domain.database.heroesinfo.HeroDatabase
 import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepository
 import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepositoryImpl
 import com.levp.immersivedotastats.domain.network.interfaces.StratzApiClient
+import com.levp.immersivedotastats.domain.usecases.GetUserHeroesPerformanceUseCase
 import com.levp.immersivedotastats.domain.usecases.GetUserInfoUseCase
 import com.levp.immersivedotastats.utils.StratzApiKey
 import dagger.Module
@@ -55,5 +56,11 @@ object AppModule {
     @Singleton
     fun provideUserInfoUseCase(apiClient: StratzApiClient): GetUserInfoUseCase {
         return GetUserInfoUseCase(apiClient)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGetHeroesPerformanceStatUseCase(apiClient: StratzApiClient): GetUserHeroesPerformanceUseCase {
+        return GetUserHeroesPerformanceUseCase(apiClient)
     }
 }

@@ -7,6 +7,7 @@ import com.levp.immersivedotastats.App
 import com.levp.immersivedotastats.domain.network.RetrofitInstance
 import com.levp.immersivedotastats.domain.network.dto.UserInfo
 import com.levp.immersivedotastats.domain.network.dto.playerinfo.Profile
+import com.levp.immersivedotastats.domain.usecases.GetUserHeroesPerformanceUseCase
 import com.levp.immersivedotastats.domain.usecases.GetUserInfoUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,7 +21,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class UserInfoViewModel @Inject constructor(
-    private val getUserInfoUseCase: GetUserInfoUseCase
+    private val getUserInfoUseCase: GetUserInfoUseCase,
+    private val getUserHeroesPerformanceUseCase: GetUserHeroesPerformanceUseCase
 ) : ViewModel() {
 
     companion object {
@@ -37,10 +39,13 @@ class UserInfoViewModel @Inject constructor(
             mutableUiState.update {
                 it.copy(isLoading = true)
             }
+            val heroesPerformance =
+                getUserHeroesPerformanceUseCase.execute(userId).sortedByDescending { it.matches }
             mutableUiState.update {
                 it.copy(
                     userInfo = getUserInfoUseCase.execute(userId),
-                    isLoading = false
+                    userHeroesPerformance = heroesPerformance,
+                    isLoading = false,
                 )
             }
         }

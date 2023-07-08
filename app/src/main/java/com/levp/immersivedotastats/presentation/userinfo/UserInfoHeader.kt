@@ -40,9 +40,8 @@ fun UserInfoHeader(
             .height(104.dp)
             .background(color = Color.LightGray)
     ) {
-        val userIcon = "https://http.cat/102"
         Icon(
-            painter = rememberAsyncImagePainter(model = userInfo.userIcon),
+            painter = rememberAsyncImagePainter("${userInfo.userIcon}"),
             contentDescription = null,
             modifier = Modifier
                 .size(80.dp)
