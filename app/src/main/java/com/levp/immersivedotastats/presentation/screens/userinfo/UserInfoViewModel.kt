@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.presentation.userinfo
+package com.levp.immersivedotastats.presentation.screens.userinfo
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -11,7 +11,6 @@ import com.levp.immersivedotastats.domain.usecases.GetUserHeroesPerformanceUseCa
 import com.levp.immersivedotastats.domain.usecases.GetUserInfoUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -54,7 +53,6 @@ class UserInfoViewModel @Inject constructor(
     fun loadUserInfoOpenDota(newUserId: String) {
         viewModelScope.launch {
             val response = try {
-                Log.i("hehe", "trying to get response with $newUserId")
                 RetrofitInstance.playerApi.getPlayerById(newUserId)
             } catch (e: IOException) {
                 Log.e("hehe", "IOException")

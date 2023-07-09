@@ -11,8 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.levp.immersivedotastats.presentation.MainNavHost
-import com.levp.immersivedotastats.ui.theme.ImmersiveDotaStatsTheme
-import com.levp.immersivedotastats.presentation.userinfo.UserInfoScreen
+import com.levp.immersivedotastats.presentation.theme.ImmersiveDotaStatsTheme
+import com.levp.immersivedotastats.presentation.screens.userinfo.UserInfoScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

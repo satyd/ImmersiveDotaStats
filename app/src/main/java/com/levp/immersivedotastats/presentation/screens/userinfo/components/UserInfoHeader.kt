@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.presentation.userinfo
+package com.levp.immersivedotastats.presentation.screens.userinfo.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -24,10 +24,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.net.toUri
 import coil.compose.rememberAsyncImagePainter
 import com.levp.immersivedotastats.R
 import com.levp.immersivedotastats.presentation.common.WinLossText
+import com.levp.immersivedotastats.presentation.screens.userinfo.UserInfoState
 
 @Composable
 fun UserInfoHeader(

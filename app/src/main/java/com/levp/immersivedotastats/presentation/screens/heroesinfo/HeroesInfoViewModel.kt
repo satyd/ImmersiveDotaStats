@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.presentation.heroesinfo
+package com.levp.immersivedotastats.presentation.screens.heroesinfo
 
 import android.util.Log
 import androidx.lifecycle.ViewModel

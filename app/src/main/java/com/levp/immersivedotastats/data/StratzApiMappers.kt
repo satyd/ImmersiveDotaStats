@@ -4,7 +4,6 @@ import com.levp.AccountInfoQuery
 import com.levp.GetHeroesPerformanceQuery
 import com.levp.immersivedotastats.domain.network.dto.HeroPerformanceStat
 import com.levp.immersivedotastats.domain.network.dto.UserInfo
-import com.levp.immersivedotastats.presentation.userinfo.UserInfoState
 import java.math.BigDecimal
 import java.math.RoundingMode
 

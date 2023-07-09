@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.presentation.heroesinfo
+package com.levp.immersivedotastats.presentation.screens.heroesinfo
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

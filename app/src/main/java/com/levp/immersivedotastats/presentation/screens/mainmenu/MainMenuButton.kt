@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.presentation.mainmenu
+package com.levp.immersivedotastats.presentation.screens.mainmenu
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape

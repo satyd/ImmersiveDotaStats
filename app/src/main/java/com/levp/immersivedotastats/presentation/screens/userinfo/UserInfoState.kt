@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.presentation.userinfo
+package com.levp.immersivedotastats.presentation.screens.userinfo
 
 import androidx.compose.runtime.Stable
 import com.levp.immersivedotastats.domain.network.dto.HeroPerformanceStat
