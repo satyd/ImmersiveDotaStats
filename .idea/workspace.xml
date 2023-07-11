@@ -9,19 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d223134-e9bc-46cb-b7e7-c139095c81f4" name="Changes" comment="few more resources and small refactor">
-      <change afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/utils/FormatterUtil.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/dotaplus_small_icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/common/ComponentUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/common/ComponentUtil.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/common/HeroStatEntry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/common/HeroStatEntryItem.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/common/WinLossText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/common/WinLossText.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/heroesinfo/HeroesInfoEntryItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/heroesinfo/HeroesInfoEntryItem.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/components/UserInfoHeader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/components/UserInfoHeader.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/components/UserInfoHeroStatPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/components/UserInfoHeroStatPanel.kt" afterDir="false" />
-    </list>
+    <list default="true" id="6d223134-e9bc-46cb-b7e7-c139095c81f4" name="Changes" comment="few more resources and small refactor" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
