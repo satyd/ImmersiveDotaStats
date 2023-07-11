@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.ui.theme
+package com.levp.immersivedotastats.presentation.theme
 
 import android.app.Activity
 import android.os.Build

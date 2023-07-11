@@ -11,3 +11,19 @@ query AccountInfo($accountId: Long!) {
         }
     }
 }
+
+query GetHeroesPerformance($accountId:Long!) {
+    player(steamAccountId: $accountId){
+        heroesPerformance (request:{matchGroupOrderBy: MATCH_COUNT}, take:124, skip:0){
+            heroId
+            hero {
+                shortName
+                displayName
+            }
+            matchCount
+            winCount
+            kDA
+            lastPlayedDateTime
+        }
+    }
+}

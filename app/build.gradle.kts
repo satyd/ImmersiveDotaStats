@@ -93,7 +93,7 @@ dependencies {
     kapt("androidx.hilt:hilt-compiler:1.0.0")
 
     //Coil for images by url
-    implementation("io.coil-kt:coil-compose:2.2.2")
+    implementation("io.coil-kt:coil-compose:2.4.0")
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
 
@@ -108,7 +108,6 @@ dependencies {
 
     implementation("com.apollographql.apollo3:apollo-runtime:3.8.2")
     implementation("com.apollographql.apollo3:apollo-normalized-cache-sqlite:3.8.2")
-    //implementation("com.apollographql.apollo3:apollo-coroutines-support:3.8.2")
 }
 // Allow references to generated code
 kapt {

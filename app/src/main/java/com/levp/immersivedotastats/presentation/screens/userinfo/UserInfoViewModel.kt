@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.presentation.userinfo
+package com.levp.immersivedotastats.presentation.screens.userinfo
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -7,10 +7,10 @@ import com.levp.immersivedotastats.App
 import com.levp.immersivedotastats.domain.network.RetrofitInstance
 import com.levp.immersivedotastats.domain.network.dto.UserInfo
 import com.levp.immersivedotastats.domain.network.dto.playerinfo.Profile
+import com.levp.immersivedotastats.domain.usecases.GetUserHeroesPerformanceUseCase
 import com.levp.immersivedotastats.domain.usecases.GetUserInfoUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -20,7 +20,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class UserInfoViewModel @Inject constructor(
-    private val getUserInfoUseCase: GetUserInfoUseCase
+    private val getUserInfoUseCase: GetUserInfoUseCase,
+    private val getUserHeroesPerformanceUseCase: GetUserHeroesPerformanceUseCase
 ) : ViewModel() {
 
     companion object {
@@ -37,10 +38,13 @@ class UserInfoViewModel @Inject constructor(
             mutableUiState.update {
                 it.copy(isLoading = true)
             }
+            val heroesPerformance =
+                getUserHeroesPerformanceUseCase.execute(userId).sortedByDescending { it.matches }
             mutableUiState.update {
                 it.copy(
                     userInfo = getUserInfoUseCase.execute(userId),
-                    isLoading = false
+                    userHeroesPerformance = heroesPerformance,
+                    isLoading = false,
                 )
             }
         }
@@ -49,7 +53,6 @@ class UserInfoViewModel @Inject constructor(
     fun loadUserInfoOpenDota(newUserId: String) {
         viewModelScope.launch {
             val response = try {
-                Log.i("hehe", "trying to get response with $newUserId")
                 RetrofitInstance.playerApi.getPlayerById(newUserId)
             } catch (e: IOException) {
                 Log.e("hehe", "IOException")
