@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import com.levp.immersivedotastats.domain.network.Path
+import com.levp.immersivedotastats.presentation.common.SmallSpacer
 
 @Composable
 fun HeroesInfoEntryItem(viewEntity: HeroInfoViewEntity) {
@@ -42,14 +43,14 @@ fun HeroesInfoEntryItem(viewEntity: HeroInfoViewEntity) {
                 .wrapContentWidth()
         ) {
 
-            Row() {
-                Spacer(modifier = Modifier.size(4.dp))
+            Row {
+                SmallSpacer()
                 Text(
                     text = viewEntity.locName,
                     fontSize = 24.sp,
                     fontWeight = FontWeight.Black
                 )
-                Spacer(modifier = Modifier.size(4.dp))
+                SmallSpacer()
                 //Text(text = "has ${viewEntity.legs} legs", fontSize = 24.sp)
             }
             Text(

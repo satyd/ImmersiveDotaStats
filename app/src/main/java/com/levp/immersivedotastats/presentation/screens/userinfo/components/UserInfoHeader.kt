@@ -22,12 +22,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import com.levp.immersivedotastats.R
+import com.levp.immersivedotastats.presentation.common.SmallSpacer
 import com.levp.immersivedotastats.presentation.common.WinLossText
 import com.levp.immersivedotastats.presentation.screens.userinfo.UserInfoState
+import com.levp.immersivedotastats.presentation.theme.SmallPadding
 
 @Composable
 fun UserInfoHeader(
@@ -41,11 +44,11 @@ fun UserInfoHeader(
             .background(color = Color.LightGray)
     ) {
         Icon(
-            painter = rememberAsyncImagePainter("${userInfo.userIcon}"),
+            painter = rememberAsyncImagePainter(userInfo.userIcon),
             contentDescription = null,
             modifier = Modifier
                 .size(80.dp)
-                //.padding(4.dp)
+                .padding(Dp.SmallPadding)
         )
         Spacer(modifier = Modifier.width(8.dp))
         Row(modifier = Modifier.fillMaxSize(), horizontalArrangement = Arrangement.SpaceBetween) {
@@ -55,12 +58,20 @@ fun UserInfoHeader(
                     .fillMaxHeight()
                     .padding(top = 8.dp)
             ) {
-                Text(
-                    text = userInfo.userName,
-                    fontSize = 24.sp,
-                    fontWeight = FontWeight.Bold
-                )
-                val loses = (userInfo.matches-userInfo.wins)
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        text = userInfo.userName,
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                    SmallSpacer()
+                    Icon(
+                        painter = painterResource(id = R.drawable.dotaplus_small_icon),
+                        contentDescription = null,
+                        modifier = Modifier.size(12.dp)
+                    )
+                }
+                val loses = (userInfo.matches - userInfo.wins)
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(text = "Matches: ${userInfo.matches}", fontSize = 12.sp)
                 Spacer(modifier = Modifier.height(4.dp))
@@ -68,14 +79,10 @@ fun UserInfoHeader(
                 Spacer(modifier = Modifier.height(4.dp))
 
             }
-            Row(modifier = Modifier.fillMaxHeight(), verticalAlignment = Alignment.CenterVertically) {
-                if (userInfo.isDotaPlusSub) {
-                    Image(
-                        painter = painterResource(id = R.drawable.dotaplus_sub),
-                        contentDescription = null,
-                        modifier = Modifier.size(36.dp)
-                    )
-                }
+            Row(
+                modifier = Modifier.fillMaxHeight(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
                 Image(
                     painter = painterResource(id = R.drawable.no_rank_medal),
                     contentDescription = null,
