@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.levp.immersivedotastats.App
 import com.levp.immersivedotastats.domain.network.RetrofitInstance
+import com.levp.immersivedotastats.domain.network.dto.HeroPerformanceStat
 import com.levp.immersivedotastats.domain.network.dto.UserInfo
 import com.levp.immersivedotastats.domain.network.dto.playerinfo.Profile
 import com.levp.immersivedotastats.domain.usecases.GetUserHeroesPerformanceUseCase
@@ -27,26 +28,50 @@ class UserInfoViewModel @Inject constructor(
     companion object {
         const val USER_ID = "USER_ID"
         const val IS_USER_ID_SAVED = "IS_USER_ID_SAVED"
+        const val IS_TURBO_ENABLED = "IS_TURBO_ENABLED"
     }
 
-    private val mutableUiState = MutableStateFlow(UserInfoState.getEmpty())
+    private val mutableUiState = MutableStateFlow(setEmptyState())
     val uiState = mutableUiState.asStateFlow()
 
-    fun loadUserInfoStratz(newUserId: String) {
+
+    private suspend fun requestUserInfoStratz(newUserId: String) {
         val userId = newUserId.toLong()
+        mutableUiState.update {
+            it.copy(isLoading = true)
+        }
+        val heroesPerformance = requestHeroesPerformance(userId)
+
+        mutableUiState.update {
+            it.copy(
+                userInfo = getUserInfoUseCase.execute(userId),
+                userHeroesPerformance = heroesPerformance,
+                isLoading = false,
+            )
+        }
+    }
+
+    private suspend fun requestHeroesPerformance(userId: Long): List<HeroPerformanceStat> {
+        return getUserHeroesPerformanceUseCase.execute(userId, uiState.value.isTurboEnabled)
+            .sortedByDescending { it.matches }
+    }
+
+    fun loadUserInfoStratz(newUserId: String) {
         viewModelScope.launch {
-            mutableUiState.update {
-                it.copy(isLoading = true)
-            }
-            val heroesPerformance =
-                getUserHeroesPerformanceUseCase.execute(userId).sortedByDescending { it.matches }
-            mutableUiState.update {
-                it.copy(
-                    userInfo = getUserInfoUseCase.execute(userId),
-                    userHeroesPerformance = heroesPerformance,
-                    isLoading = false,
+            requestUserInfoStratz(newUserId)
+        }
+    }
+
+    fun isTurboEnabledSwitch() {
+        viewModelScope.launch {
+            val isTurboEnabled = !uiState.value.isTurboEnabled
+            App.instance.preferencesManager.saveBoolean(IS_TURBO_ENABLED, true)
+            mutableUiState.emit(
+                uiState.value.copy(
+                    isTurboEnabled = isTurboEnabled
                 )
-            }
+            )
+            requestUserInfoStratz(uiState.value.userInfo.userId)
         }
     }
 
@@ -85,6 +110,15 @@ class UserInfoViewModel @Inject constructor(
                     wins = 0
                 )
             )
+        )
+    }
+
+    fun setEmptyState(): UserInfoState {
+        return UserInfoState(
+            userInfo = UserInfo.getEmpty(),
+            isLoading = false,
+            userHeroesPerformance = emptyList(),
+            isTurboEnabled = App.instance.preferencesManager.getBoolean(IS_TURBO_ENABLED)
         )
     }
 }

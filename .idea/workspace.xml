@@ -9,7 +9,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d223134-e9bc-46cb-b7e7-c139095c81f4" name="Changes" comment="few more resources and small refactor" />
+    <list default="true" id="6d223134-e9bc-46cb-b7e7-c139095c81f4" name="Changes" comment="few more resources and small refactor">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/graphql/com/levp/StratzApi.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/graphql/com/levp/StratzApi.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/ApolloStratzApiClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/ApolloStratzApiClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/network/interfaces/StratzApiClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/network/interfaces/StratzApiClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/usecases/GetUserHeroesPerformanceUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/usecases/GetUserHeroesPerformanceUseCase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/common/WinLossText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/common/WinLossText.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/UserInfoScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/UserInfoScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/UserInfoState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/UserInfoState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/UserInfoViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/UserInfoViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/components/UserInfoHeroStatPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/components/UserInfoHeroStatPanel.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -409,6 +420,16 @@
     </task>
     <option name="localTasksCounter" value="9" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

@@ -31,6 +31,7 @@ fun UserInfoScreen(
 ) {
     val userInfoState by viewModel.uiState.collectAsState()
     var userId by rememberSaveable { mutableStateOf("350885037") }
+    val switchTurboEnabled = { viewModel.isTurboEnabledSwitch() }
 
     Column(
         modifier = Modifier
@@ -42,7 +43,11 @@ fun UserInfoScreen(
         UserInfoHeader(userInfoState)
         SmallSpacer()
         if (userInfoState.userHeroesPerformance.size > 5) {
-            HeroStatPanel(userHeroesPerformance = userInfoState.userHeroesPerformance)
+            HeroStatPanel(
+                isTurboEnabled = userInfoState.isTurboEnabled,
+                userHeroesPerformance = userInfoState.userHeroesPerformance,
+                isTurboEnabledSwitch = switchTurboEnabled
+            )
         }
         TextField(
             value = userId,

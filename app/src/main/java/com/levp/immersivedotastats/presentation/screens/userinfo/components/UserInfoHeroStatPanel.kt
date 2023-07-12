@@ -18,11 +18,12 @@ import com.levp.immersivedotastats.presentation.common.SmallSpacer
 @Composable
 fun HeroStatPanel(
     isTurboEnabled: Boolean = true,
-    userHeroesPerformance: List<HeroPerformanceStat>
+    userHeroesPerformance: List<HeroPerformanceStat>,
+    isTurboEnabledSwitch: () -> Unit
 ) {
     Column() {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Switch(checked = isTurboEnabled, onCheckedChange = {})
+            Switch(checked = isTurboEnabled, onCheckedChange = {isTurboEnabledSwitch()})
             MediumSpacer()
             Text(text = "Include turbo")
         }

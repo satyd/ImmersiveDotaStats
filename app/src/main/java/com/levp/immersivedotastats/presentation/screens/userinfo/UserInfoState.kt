@@ -8,6 +8,7 @@ import com.levp.immersivedotastats.domain.network.dto.UserInfo
 data class UserInfoState(
     var userInfo: UserInfo,
     val isLoading: Boolean = false,
+    val isTurboEnabled: Boolean = true,
     var userHeroesPerformance: List<HeroPerformanceStat>
 ) {
     companion object {

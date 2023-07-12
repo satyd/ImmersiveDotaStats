@@ -16,8 +16,9 @@ class ApolloStratzApiClient(
         return response?.toUserInfo() ?: UserInfo.getEmpty()
     }
 
-    override suspend fun getUserHeroesPerformance(accountId: Long): List<HeroPerformanceStat> {
-        val performance = apolloClient.query(GetHeroesPerformanceQuery(accountId))
+    override suspend fun getUserHeroesPerformance(accountId: Long, gameModeIDs: List<Int>): List<HeroPerformanceStat> {
+        val performance = apolloClient.query(GetHeroesPerformanceQuery(accountId, gameModeIDs))
+
             .execute().data?.player?.heroesPerformance
         return performance?.map { it?.toHeroesPerformanceStat() ?: HeroPerformanceStat.getEmpty() }
             ?: emptyList()
