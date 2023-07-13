@@ -26,6 +26,7 @@ fun AccountInfoQuery.Player.toUserInfo(): UserInfo {
 fun GetHeroesPerformanceQuery.HeroesPerformance.toHeroesPerformanceStat(): HeroPerformanceStat {
     return with(this) {
         HeroPerformanceStat(
+            heroId = heroId.toString(),
             heroName = hero?.displayName ?: "",
             matches = matchCount,
             wins = winCount,

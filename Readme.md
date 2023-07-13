@@ -22,6 +22,8 @@
 - Dagger / Hilt
 - Coroutines
 - Coil
+- Glide
+- Work Manager
 
 
 ## Прочие технологии

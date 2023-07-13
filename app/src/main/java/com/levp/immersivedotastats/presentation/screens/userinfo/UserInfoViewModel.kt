@@ -34,18 +34,20 @@ class UserInfoViewModel @Inject constructor(
     private val mutableUiState = MutableStateFlow(setEmptyState())
     val uiState = mutableUiState.asStateFlow()
 
+    private fun getCurrentUserId(): Long {
+        return uiState.value.userInfo.userId.toLong()
+    }
 
     private suspend fun requestUserInfoStratz(newUserId: String) {
         val userId = newUserId.toLong()
         mutableUiState.update {
             it.copy(isLoading = true)
         }
-        val heroesPerformance = requestHeroesPerformance(userId)
 
         mutableUiState.update {
             it.copy(
-                userInfo = getUserInfoUseCase.execute(userId),
-                userHeroesPerformance = heroesPerformance,
+                userInfo = requestUserInfo(userId),
+                userHeroesPerformance = requestHeroesPerformance(userId),
                 isLoading = false,
             )
         }
@@ -54,6 +56,10 @@ class UserInfoViewModel @Inject constructor(
     private suspend fun requestHeroesPerformance(userId: Long): List<HeroPerformanceStat> {
         return getUserHeroesPerformanceUseCase.execute(userId, uiState.value.isTurboEnabled)
             .sortedByDescending { it.matches }
+    }
+
+    private suspend fun requestUserInfo(userId: Long): UserInfo {
+        return getUserInfoUseCase.execute(userId)
     }
 
     fun loadUserInfoStratz(newUserId: String) {

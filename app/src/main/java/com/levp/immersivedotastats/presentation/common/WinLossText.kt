@@ -62,7 +62,7 @@ fun WinLossText(winCount: Int, lossCount: Int) {
                         //.fillMaxWidth(fraction = 1f - winPercent)
                         .background(Color.Red)
                 )
-                Log.d("hehe", "wr = ${winPercent}, 1-wr = ${1 - winPercent}")
+                //Log.d("hehe", "wr = ${winPercent}, 1-wr = ${1 - winPercent}")
             }
         }
     }

@@ -22,8 +22,10 @@ import androidx.compose.ui.unit.dp
 import com.levp.immersivedotastats.presentation.common.SmallSpacer
 import com.levp.immersivedotastats.presentation.screens.userinfo.components.HeroStatPanel
 import com.levp.immersivedotastats.presentation.screens.userinfo.components.UserInfoHeader
+import com.levp.immersivedotastats.utils.Constants
 import com.levp.immersivedotastats.utils.extensions.singleViewModel
 
+@SuppressWarnings("FunctionNaming")
 @Composable
 fun UserInfoScreen(
     modifier: Modifier = Modifier,
@@ -42,8 +44,9 @@ fun UserInfoScreen(
     ) {
         UserInfoHeader(userInfoState)
         SmallSpacer()
-        if (userInfoState.userHeroesPerformance.size > 5) {
+        if (userInfoState.userHeroesPerformance.size >= Constants.HeroStatEntriesToShow) {
             HeroStatPanel(
+                isLoading = userInfoState.isLoading,
                 isTurboEnabled = userInfoState.isTurboEnabled,
                 userHeroesPerformance = userInfoState.userHeroesPerformance,
                 isTurboEnabledSwitch = switchTurboEnabled
@@ -63,11 +66,11 @@ fun UserInfoScreen(
             Text(text = "Get User Data")
         }
         SmallSpacer()
-        if (userInfoState.isLoading) {
+        /*if (userInfoState.isLoading) {
             CircularProgressIndicator()
         } else {
             Text(text = userInfoState.userInfo.toString().replace(", ", "\n"))
-        }
+        }*/
     }
 }
 
