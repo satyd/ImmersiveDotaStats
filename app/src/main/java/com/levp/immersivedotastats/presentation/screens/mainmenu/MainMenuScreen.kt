@@ -1,5 +1,6 @@
 package com.levp.immersivedotastats.presentation.screens.mainmenu
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -13,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.levp.immersivedotastats.presentation.NavDestinations
 import com.levp.immersivedotastats.presentation.common.MainSpacer
+import com.levp.immersivedotastats.presentation.theme.StatsTheme
 import com.levp.immersivedotastats.utils.extensions.singleViewModel
 
 @Composable
@@ -22,7 +24,9 @@ fun MainMenuScreen(
 ) {
     val appContext = LocalContext.current
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = StatsTheme.colors.mainBackground),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {

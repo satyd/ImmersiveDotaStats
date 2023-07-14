@@ -23,6 +23,7 @@ import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.levp.immersivedotastats.presentation.theme.StatsTheme
 
 @Composable
 fun WinLossText(winCount: Int, lossCount: Int) {
@@ -53,14 +54,14 @@ fun WinLossText(winCount: Int, lossCount: Int) {
                         .height(2.dp)
                         .width(wrStripeWidth * winPercent)
                         //.fillMaxWidth(fraction = winPercent)
-                        .background(Color.Green)
+                        .background(StatsTheme.colors.winStat)
                 )
                 Spacer(
                     modifier = Modifier
                         .height(2.dp)
                         .width(wrStripeWidth * (1 - winPercent))
                         //.fillMaxWidth(fraction = 1f - winPercent)
-                        .background(Color.Red)
+                        .background(StatsTheme.colors.loseStat)
                 )
                 //Log.d("hehe", "wr = ${winPercent}, 1-wr = ${1 - winPercent}")
             }
@@ -94,7 +95,7 @@ fun WinText(count: Int) {
     Text(
         text = count.toString(),
         fontSize = 12.sp,
-        color = Color.Green
+        color = StatsTheme.colors.winStat
     )
 }
 
@@ -103,7 +104,7 @@ fun LossText(count: Int) {
     Text(
         text = count.toString(),
         fontSize = 12.sp,
-        color = Color.Red
+        color = StatsTheme.colors.loseStat
     )
 }
 

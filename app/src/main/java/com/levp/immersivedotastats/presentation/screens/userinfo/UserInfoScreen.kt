@@ -1,5 +1,6 @@
 package com.levp.immersivedotastats.presentation.screens.userinfo
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -22,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import com.levp.immersivedotastats.presentation.common.SmallSpacer
 import com.levp.immersivedotastats.presentation.screens.userinfo.components.HeroStatPanel
 import com.levp.immersivedotastats.presentation.screens.userinfo.components.UserInfoHeader
+import com.levp.immersivedotastats.presentation.theme.StatsTheme
 import com.levp.immersivedotastats.utils.Constants
 import com.levp.immersivedotastats.utils.extensions.singleViewModel
 
@@ -38,7 +40,8 @@ fun UserInfoScreen(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .wrapContentHeight(),
+            .wrapContentHeight()
+            .background(color = StatsTheme.colors.mainBackground),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {

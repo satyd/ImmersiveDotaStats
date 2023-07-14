@@ -19,8 +19,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.ExperimentalTextApi
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
@@ -32,13 +35,15 @@ import com.bumptech.glide.integration.compose.GlideImage
 import com.levp.immersivedotastats.R
 import com.levp.immersivedotastats.presentation.common.MainSpacer
 import com.levp.immersivedotastats.presentation.common.SmallSpacer
+import com.levp.immersivedotastats.presentation.common.TinySpacer
 import com.levp.immersivedotastats.presentation.common.WinLossText
 import com.levp.immersivedotastats.presentation.screens.userinfo.UserInfoState
 import com.levp.immersivedotastats.presentation.theme.LargePadding
 import com.levp.immersivedotastats.presentation.theme.MediumPadding
 import com.levp.immersivedotastats.presentation.theme.SmallPadding
+import com.levp.immersivedotastats.presentation.theme.StatsTheme
 
-@OptIn(ExperimentalGlideComposeApi::class)
+@OptIn(ExperimentalGlideComposeApi::class, ExperimentalTextApi::class)
 @SuppressWarnings("FunctionNaming")
 @Composable
 fun UserInfoHeader(
@@ -48,8 +53,9 @@ fun UserInfoHeader(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .height(104.dp)
-            .background(color = Color.LightGray)
+            .height(84.dp)
+            .background(color = StatsTheme.colors.headerBackground),
+        verticalAlignment = Alignment.Top
     ) {
         GlideImage(
             model = userInfo.userIcon,
@@ -58,41 +64,41 @@ fun UserInfoHeader(
                 .size(80.dp)
                 .padding(Dp.SmallPadding)
         )
-        /*Icon(
-            painter = rememberAsyncImagePainter(userInfo.userIcon),
-            contentDescription = null,
-            modifier = Modifier
-                .size(80.dp)
-                .padding(Dp.SmallPadding)
-        )*/
         Spacer(modifier = Modifier.width(8.dp))
-        Row(modifier = Modifier.fillMaxSize(), horizontalArrangement = Arrangement.SpaceBetween) {
+        Row(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(top = Dp.SmallPadding),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
             Column(
                 modifier = Modifier
                     .wrapContentWidth()
                     .fillMaxHeight()
-                    .padding(top = Dp.LargePadding)
+
             ) {
-                Row(verticalAlignment = Alignment.Top) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
                         text = userInfo.userName,
                         fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.Bold,
+                        color = StatsTheme.colors.mainText
                     )
                     SmallSpacer()
-                    Icon(
-                        painter = painterResource(id = R.drawable.dotaplus_small_icon),
-                        contentDescription = null,
-                        modifier = Modifier.size(12.dp)
-                    )
+                    if (uiState.userInfo.isDotaPlusSub) {
+                        Text(
+                            text = "+",
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.Yellow
+                        )
+                    }
                 }
                 val loses = (userInfo.matches - userInfo.wins)
-                SmallSpacer()
+                TinySpacer()
                 Text(text = "Matches: ${userInfo.matches}", fontSize = 12.sp)
-                SmallSpacer()
+                TinySpacer()
                 WinLossText(winCount = userInfo.wins, lossCount = loses)
-                SmallSpacer()
-
             }
             Row(
                 modifier = Modifier.fillMaxHeight(),

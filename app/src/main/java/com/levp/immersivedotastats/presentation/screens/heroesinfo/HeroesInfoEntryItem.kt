@@ -37,21 +37,20 @@ fun HeroesInfoEntryItem(viewEntity: HeroInfoViewEntity) {
         verticalAlignment = Alignment.CenterVertically
     ) {
         if (imageFile.exists()) {
-            Log.i("hehe","heroimg exists $imageFile")
             HeroImage(imageFile = imageFile)
-        } else {}
-        /*Image(
-            painter = rememberAsyncImagePainter("$baseImgUrl${viewEntity.image}"),
-            contentDescription = null,
-            modifier = Modifier
-                .width(80.dp)
-        )*/
+        } else {
+            Image(
+                painter = rememberAsyncImagePainter("$baseImgUrl${viewEntity.image}"),
+                contentDescription = null,
+                modifier = Modifier
+                    .width(80.dp)
+            )
+        }
         Column(
             modifier = Modifier
                 .fillMaxHeight()
                 .wrapContentWidth()
         ) {
-
             Row {
                 SmallSpacer()
                 Text(

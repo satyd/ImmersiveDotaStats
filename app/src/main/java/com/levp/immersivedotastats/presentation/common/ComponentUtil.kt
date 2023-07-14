@@ -13,6 +13,12 @@ import androidx.compose.ui.unit.Dp
 import com.levp.immersivedotastats.presentation.theme.DozenPadding
 import com.levp.immersivedotastats.presentation.theme.MediumPadding
 import com.levp.immersivedotastats.presentation.theme.SmallPadding
+import com.levp.immersivedotastats.presentation.theme.TinyPadding
+
+@Composable
+fun TinySpacer() {
+    Spacer(modifier = Modifier.size(Dp.TinyPadding))
+}
 
 @Composable
 fun SmallSpacer() {

@@ -60,7 +60,7 @@ fun HeroStatEntryItem(heroStat: HeroPerformanceStat) {
             Column() {
                 Text(
                     text = heroStat.heroName,
-                    fontSize = 14.sp,
+                    fontSize = 16.sp,
                     color = Color.Black,
                     fontWeight = FontWeight.Bold
                 )

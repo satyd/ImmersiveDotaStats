@@ -74,6 +74,7 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.28.0")
     implementation("androidx.work:work-runtime-ktx:2.8.1")
 
 
