@@ -1,6 +1,7 @@
 package com.levp.immersivedotastats.domain.network.dto
 
 data class HeroPerformanceStat(
+    val heroId: String,
     val heroName: String,
     val lastPlayed: String,
     val matches: Int,
@@ -10,6 +11,7 @@ data class HeroPerformanceStat(
 ) {
     companion object {
         fun getEmpty() = HeroPerformanceStat(
+            heroId = "1",
             heroName = "hero name",
             lastPlayed = "never",
             matches = 0,

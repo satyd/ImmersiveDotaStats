@@ -9,11 +9,15 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -53,6 +57,11 @@ fun ImmersiveDotaStatsTheme(
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }
+    //эта часть влияет на цвет символов статусбара
+    val systemUiController = rememberSystemUiController()
+    systemUiController.setStatusBarColor(
+        color = Color.Transparent
+    )
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
@@ -61,10 +70,21 @@ fun ImmersiveDotaStatsTheme(
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }
     }
+    val colors = CreamBrownColors
+    CompositionLocalProvider(LocalStatsColors provides colors) {
+        MaterialTheme(
+            colorScheme = colorScheme,
+            typography = Typography,
+            content = content
+        )
+    }
+}
 
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
-        content = content
-    )
+object StatsTheme {
+    val colors: StatsColors
+        @Composable get() = LocalStatsColors.current
+}
+
+val LocalStatsColors = staticCompositionLocalOf {
+    StatsColors()
 }

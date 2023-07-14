@@ -1,5 +1,6 @@
 package com.levp.immersivedotastats.presentation.screens.userinfo
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -22,8 +23,11 @@ import androidx.compose.ui.unit.dp
 import com.levp.immersivedotastats.presentation.common.SmallSpacer
 import com.levp.immersivedotastats.presentation.screens.userinfo.components.HeroStatPanel
 import com.levp.immersivedotastats.presentation.screens.userinfo.components.UserInfoHeader
+import com.levp.immersivedotastats.presentation.theme.StatsTheme
+import com.levp.immersivedotastats.utils.Constants
 import com.levp.immersivedotastats.utils.extensions.singleViewModel
 
+@SuppressWarnings("FunctionNaming")
 @Composable
 fun UserInfoScreen(
     modifier: Modifier = Modifier,
@@ -31,18 +35,25 @@ fun UserInfoScreen(
 ) {
     val userInfoState by viewModel.uiState.collectAsState()
     var userId by rememberSaveable { mutableStateOf("350885037") }
+    val switchTurboEnabled = { viewModel.isTurboEnabledSwitch() }
 
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .wrapContentHeight(),
+            .wrapContentHeight()
+            .background(color = StatsTheme.colors.mainBackground),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
         UserInfoHeader(userInfoState)
         SmallSpacer()
-        if (userInfoState.userHeroesPerformance.size > 5) {
-            HeroStatPanel(userHeroesPerformance = userInfoState.userHeroesPerformance)
+        if (userInfoState.userHeroesPerformance.size >= Constants.HeroStatEntriesToShow) {
+            HeroStatPanel(
+                isLoading = userInfoState.isLoading,
+                isTurboEnabled = userInfoState.isTurboEnabled,
+                userHeroesPerformance = userInfoState.userHeroesPerformance,
+                isTurboEnabledSwitch = switchTurboEnabled
+            )
         }
         TextField(
             value = userId,
@@ -58,11 +69,11 @@ fun UserInfoScreen(
             Text(text = "Get User Data")
         }
         SmallSpacer()
-        if (userInfoState.isLoading) {
+        /*if (userInfoState.isLoading) {
             CircularProgressIndicator()
         } else {
             Text(text = userInfoState.userInfo.toString().replace(", ", "\n"))
-        }
+        }*/
     }
 }
 

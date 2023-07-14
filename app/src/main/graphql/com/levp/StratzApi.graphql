@@ -12,9 +12,15 @@ query AccountInfo($accountId: Long!) {
     }
 }
 
-query GetHeroesPerformance($accountId:Long!) {
+query GetHeroesPerformance($accountId:Long!, $gameModeIDs:[Byte!]!) {
     player(steamAccountId: $accountId){
-        heroesPerformance (request:{matchGroupOrderBy: MATCH_COUNT}, take:124, skip:0){
+        heroesPerformance (
+            request:{
+                matchGroupOrderBy: MATCH_COUNT
+                gameModeIds: $gameModeIDs # [1,2,3,4,5,22,23] 23 = turbo
+            },
+            take:124, skip:0
+        ){
             heroId
             hero {
                 shortName

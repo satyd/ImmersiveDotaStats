@@ -26,3 +26,9 @@ inline val Dp.Companion.SmallMediumPadding
  */
 inline val Dp.Companion.SmallPadding
     get() = 4.dp
+
+/**
+ * 4 dp
+ */
+inline val Dp.Companion.TinyPadding
+    get() = 2.dp

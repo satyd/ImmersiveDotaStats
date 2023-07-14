@@ -5,5 +5,5 @@ import com.levp.immersivedotastats.domain.network.dto.UserInfo
 
 interface StratzApiClient {
     suspend fun getAccountInfo(accountId: Long): UserInfo
-    suspend fun getUserHeroesPerformance(accountId: Long): List<HeroPerformanceStat>
+    suspend fun getUserHeroesPerformance(accountId: Long, gameModeIDs: List<Int>): List<HeroPerformanceStat>
 }

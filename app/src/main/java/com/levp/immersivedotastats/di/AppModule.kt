@@ -1,6 +1,7 @@
 package com.levp.immersivedotastats.di
 
 import android.app.Application
+import android.content.Context
 import androidx.room.Room
 import com.apollographql.apollo3.ApolloClient
 import com.levp.immersivedotastats.data.ApolloStratzApiClient
@@ -10,10 +11,12 @@ import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepository
 import com.levp.immersivedotastats.domain.network.interfaces.StratzApiClient
 import com.levp.immersivedotastats.domain.usecases.GetUserHeroesPerformanceUseCase
 import com.levp.immersivedotastats.domain.usecases.GetUserInfoUseCase
+import com.levp.immersivedotastats.domain.usecases.LoadImageUseCase
 import com.levp.immersivedotastats.utils.StratzApiKey
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -62,5 +65,13 @@ object AppModule {
     @Singleton
     fun provideGetHeroesPerformanceStatUseCase(apiClient: StratzApiClient): GetUserHeroesPerformanceUseCase {
         return GetUserHeroesPerformanceUseCase(apiClient)
+    }
+
+    @Provides
+    @Singleton
+    fun provideLoadImageUseCase(
+        @ApplicationContext appContext: Context
+    ): LoadImageUseCase {
+        return LoadImageUseCase(appContext)
     }
 }
