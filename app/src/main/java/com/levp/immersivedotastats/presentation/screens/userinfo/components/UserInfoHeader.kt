@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -34,6 +35,7 @@ import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.levp.immersivedotastats.R
 import com.levp.immersivedotastats.presentation.common.MainSpacer
+import com.levp.immersivedotastats.presentation.common.MedalView
 import com.levp.immersivedotastats.presentation.common.SmallSpacer
 import com.levp.immersivedotastats.presentation.common.TinySpacer
 import com.levp.immersivedotastats.presentation.common.WinLossText
@@ -101,14 +103,10 @@ fun UserInfoHeader(
                 WinLossText(winCount = userInfo.wins, lossCount = loses)
             }
             Row(
-                modifier = Modifier.fillMaxHeight(),
+                modifier = Modifier.wrapContentHeight().padding(Dp.SmallPadding),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Image(
-                    painter = painterResource(id = R.drawable.no_rank_medal),
-                    contentDescription = null,
-                    modifier = Modifier.size(48.dp)
-                )
+                MedalView(rankTier = userInfo.seasonRank)
             }
         }
     }
