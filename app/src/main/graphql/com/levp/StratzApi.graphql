@@ -33,3 +33,32 @@ query GetHeroesPerformance($accountId:Long!, $gameModeIDs:[Byte!]!) {
         }
     }
 }
+
+query GetRecentMatches($accountId:Long!) {
+    player(steamAccountId: $accountId) {
+        matches(request:{}) {
+            id
+            didRadiantWin
+            durationSeconds
+            rank
+            bracket
+            actualRank
+            players(steamAccountId: $accountId){
+                isRadiant
+                isVictory
+                imp
+                hero{
+                    displayName
+                }
+                kills
+                deaths
+                assists
+                heroId
+                heroDamage
+                heroHealing
+                towerDamage
+                award
+            }
+        }
+    }
+}

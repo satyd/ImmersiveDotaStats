@@ -1,5 +1,6 @@
 package com.levp.immersivedotastats.presentation.common
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
@@ -47,4 +48,12 @@ fun BrushText(symbol: String) {
             )
         )
     )
+}
+
+@Composable
+fun KDAView(k: Short, d: Short, a: Short) {
+    Column() {
+        Text(text = "$k/$d/$a")
+
+    }
 }

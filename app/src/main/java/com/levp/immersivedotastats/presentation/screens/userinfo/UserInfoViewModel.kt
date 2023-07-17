@@ -6,10 +6,12 @@ import androidx.lifecycle.viewModelScope
 import com.levp.immersivedotastats.App
 import com.levp.immersivedotastats.domain.network.RetrofitInstance
 import com.levp.immersivedotastats.domain.network.dto.HeroPerformanceStat
+import com.levp.immersivedotastats.domain.network.dto.HistoryMatch
 import com.levp.immersivedotastats.domain.network.dto.UserInfo
 import com.levp.immersivedotastats.domain.network.dto.playerinfo.Profile
 import com.levp.immersivedotastats.domain.usecases.GetUserHeroesPerformanceUseCase
 import com.levp.immersivedotastats.domain.usecases.GetUserInfoUseCase
+import com.levp.immersivedotastats.domain.usecases.GetUserRecentMatchesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -22,6 +24,7 @@ import javax.inject.Inject
 @HiltViewModel
 class UserInfoViewModel @Inject constructor(
     private val getUserInfoUseCase: GetUserInfoUseCase,
+    private val getUserRecentMatchesUseCase: GetUserRecentMatchesUseCase,
     private val getUserHeroesPerformanceUseCase: GetUserHeroesPerformanceUseCase
 ) : ViewModel() {
 
@@ -48,6 +51,7 @@ class UserInfoViewModel @Inject constructor(
             it.copy(
                 userInfo = requestUserInfo(userId),
                 userHeroesPerformance = requestHeroesPerformance(userId),
+                userRecentMatches = requestMatchHistory(userId),
                 isLoading = false,
             )
         }
@@ -56,6 +60,10 @@ class UserInfoViewModel @Inject constructor(
     private suspend fun requestHeroesPerformance(userId: Long): List<HeroPerformanceStat> {
         return getUserHeroesPerformanceUseCase.execute(userId, uiState.value.isTurboEnabled)
             .sortedByDescending { it.matches }
+    }
+
+    private suspend fun requestMatchHistory(userId: Long): List<HistoryMatch> {
+        return getUserRecentMatchesUseCase.execute(userId)
     }
 
     private suspend fun requestUserInfo(userId: Long): UserInfo {
@@ -119,11 +127,12 @@ class UserInfoViewModel @Inject constructor(
         )
     }
 
-    fun setEmptyState(): UserInfoState {
+    private fun setEmptyState(): UserInfoState {
         return UserInfoState(
             userInfo = UserInfo.getEmpty(),
             isLoading = false,
             userHeroesPerformance = emptyList(),
+            userRecentMatches = emptyList(),
             isTurboEnabled = App.instance.preferencesManager.getBoolean(IS_TURBO_ENABLED)
         )
     }

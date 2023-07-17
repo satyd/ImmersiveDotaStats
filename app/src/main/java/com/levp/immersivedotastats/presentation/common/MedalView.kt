@@ -12,12 +12,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.levp.immersivedotastats.R
 
 @Composable
-fun MedalView(rankTier: Byte) {
-    val medalHeight = 60.dp
+fun MedalView(rankTier: Byte, medalHeight: Dp = 60.dp) {
     Box(modifier = Modifier.wrapContentSize()) {
         if (rankTier % 10 != 0) {
             Icon(
@@ -63,7 +63,7 @@ fun getStarsDrawableByTier(tier: Int): Int {
 
 @Composable
 @Preview
-fun MedalPreview(){
+fun MedalPreview() {
     Column() {
         MedalView(rankTier = 0)
         SmallSpacer()

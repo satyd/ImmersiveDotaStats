@@ -42,20 +42,12 @@ fun HeroStatEntryItem(heroStat: HeroPerformanceStat) {
 
     Row(horizontalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxWidth()) {
         Row {
-            if (imageFile.exists()) {
-                HeroImage(imageFile = imageFile)
-                /*Icon(
-                    painter = rememberAsyncImagePainter(model = image),
-                    contentDescription = null,
-                    modifier = Modifier.size(48.dp)
-                )*/
-            } else {
-                Icon(
-                    painter = painterResource(id = R.drawable.hero_icon_placeholder),
-                    contentDescription = null,
-                    modifier = Modifier.size(48.dp)
-                )
-            }
+            HeroImage(imageFile = imageFile)
+            /*Icon(
+                painter = rememberAsyncImagePainter(model = image),
+                contentDescription = null,
+                modifier = Modifier.size(48.dp)
+            )*/
             SmallSpacer()
             Column() {
                 Text(
