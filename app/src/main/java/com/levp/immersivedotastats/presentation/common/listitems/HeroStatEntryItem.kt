@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.levp.immersivedotastats.domain.network.dto.HeroPerformanceStat
+import com.levp.immersivedotastats.data.remote.dto.HeroPerformanceStat
 import com.levp.immersivedotastats.presentation.common.itemparts.HeroImage
 import com.levp.immersivedotastats.presentation.common.SmallSpacer
 import com.levp.immersivedotastats.presentation.common.TinySpacer

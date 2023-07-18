@@ -13,7 +13,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.levp.immersivedotastats.domain.network.dto.HistoryMatch
+import com.levp.immersivedotastats.data.remote.dto.HistoryMatch
 import com.levp.immersivedotastats.presentation.common.itemparts.HeroImage
 import com.levp.immersivedotastats.presentation.common.itemparts.MatchBasicStatBox
 import com.levp.immersivedotastats.presentation.common.TinySpacer

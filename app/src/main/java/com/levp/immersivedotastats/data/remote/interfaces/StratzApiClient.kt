@@ -1,8 +1,8 @@
-package com.levp.immersivedotastats.domain.network.interfaces
+package com.levp.immersivedotastats.data.remote.interfaces
 
-import com.levp.immersivedotastats.domain.network.dto.HeroPerformanceStat
-import com.levp.immersivedotastats.domain.network.dto.HistoryMatch
-import com.levp.immersivedotastats.domain.network.dto.UserInfo
+import com.levp.immersivedotastats.data.remote.dto.HeroPerformanceStat
+import com.levp.immersivedotastats.data.remote.dto.HistoryMatch
+import com.levp.immersivedotastats.data.remote.dto.UserInfo
 
 interface StratzApiClient {
     suspend fun getAccountInfo(accountId: Long): UserInfo

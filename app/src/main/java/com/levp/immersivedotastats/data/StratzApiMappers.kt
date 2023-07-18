@@ -3,9 +3,9 @@ package com.levp.immersivedotastats.data
 import com.levp.AccountInfoQuery
 import com.levp.GetHeroesPerformanceQuery
 import com.levp.GetRecentMatchesQuery
-import com.levp.immersivedotastats.domain.network.dto.HeroPerformanceStat
-import com.levp.immersivedotastats.domain.network.dto.HistoryMatch
-import com.levp.immersivedotastats.domain.network.dto.UserInfo
+import com.levp.immersivedotastats.data.remote.dto.HeroPerformanceStat
+import com.levp.immersivedotastats.data.remote.dto.HistoryMatch
+import com.levp.immersivedotastats.data.remote.dto.UserInfo
 import java.math.BigDecimal
 import java.math.RoundingMode
 

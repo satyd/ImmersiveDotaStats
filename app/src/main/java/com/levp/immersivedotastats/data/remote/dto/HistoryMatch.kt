@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.domain.network.dto
+package com.levp.immersivedotastats.data.remote.dto
 
 data class HistoryMatch(
     val matchId: Long,

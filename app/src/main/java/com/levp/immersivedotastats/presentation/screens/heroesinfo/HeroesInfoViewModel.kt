@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepository
-import com.levp.immersivedotastats.domain.network.RetrofitInstance
-import com.levp.immersivedotastats.utils.HeroInfoMapper
+import com.levp.immersivedotastats.data.repository.RetrofitInstance
+import com.levp.immersivedotastats.data.HeroInfoMapper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch

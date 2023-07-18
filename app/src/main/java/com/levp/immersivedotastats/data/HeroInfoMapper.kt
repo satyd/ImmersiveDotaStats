@@ -1,6 +1,6 @@
-package com.levp.immersivedotastats.utils
+package com.levp.immersivedotastats.data
 
-import com.levp.immersivedotastats.domain.network.dto.heroinfo.HeroStatsInfoItem
+import com.levp.immersivedotastats.data.remote.dto.heroinfo.HeroStatsInfoItem
 import com.levp.immersivedotastats.presentation.screens.heroesinfo.HeroInfoViewEntity
 
 class HeroInfoMapper {

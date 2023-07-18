@@ -9,7 +9,7 @@ import androidx.compose.material3.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
-import com.levp.immersivedotastats.domain.network.dto.HistoryMatch
+import com.levp.immersivedotastats.data.remote.dto.HistoryMatch
 import com.levp.immersivedotastats.presentation.common.listitems.MatchEntryItem
 import com.levp.immersivedotastats.presentation.common.PanelHeaderText
 import com.levp.immersivedotastats.presentation.common.TinySpacer

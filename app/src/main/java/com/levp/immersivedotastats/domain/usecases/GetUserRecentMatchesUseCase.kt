@@ -1,7 +1,7 @@
 package com.levp.immersivedotastats.domain.usecases
 
-import com.levp.immersivedotastats.domain.network.dto.HistoryMatch
-import com.levp.immersivedotastats.domain.network.interfaces.StratzApiClient
+import com.levp.immersivedotastats.data.remote.dto.HistoryMatch
+import com.levp.immersivedotastats.data.remote.interfaces.StratzApiClient
 
 class GetUserRecentMatchesUseCase(
     private val stratzApiClient: StratzApiClient

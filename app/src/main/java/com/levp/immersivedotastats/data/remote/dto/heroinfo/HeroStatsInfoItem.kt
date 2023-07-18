@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.domain.network.dto.heroinfo
+package com.levp.immersivedotastats.data.remote.dto.heroinfo
 
 data class HeroStatsInfoItem(
     val `1_pick`: Int,

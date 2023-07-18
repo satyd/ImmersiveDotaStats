@@ -29,6 +29,7 @@
 ## Прочие технологии
 - Regex
 - KTS
+- Image Caching
 
 ### v1.0
 

@@ -5,7 +5,7 @@ import android.util.Log
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.levp.immersivedotastats.domain.FileTarget
-import com.levp.immersivedotastats.domain.network.Path
+import com.levp.immersivedotastats.data.repository.Path
 import com.levp.immersivedotastats.utils.Constants
 import java.io.File
 

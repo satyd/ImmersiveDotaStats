@@ -1,6 +1,6 @@
-package com.levp.immersivedotastats.domain.network.interfaces
+package com.levp.immersivedotastats.data.remote.interfaces
 
-import com.levp.immersivedotastats.domain.network.dto.playerinfo.PlayerInfoRaw
+import com.levp.immersivedotastats.data.remote.dto.playerinfo.PlayerInfoRaw
 import retrofit2.Response
 
 import retrofit2.http.GET

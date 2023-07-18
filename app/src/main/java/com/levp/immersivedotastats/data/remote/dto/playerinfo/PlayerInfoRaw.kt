@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.domain.network.dto.playerinfo
+package com.levp.immersivedotastats.data.remote.dto.playerinfo
 
 import com.google.gson.annotations.SerializedName
 

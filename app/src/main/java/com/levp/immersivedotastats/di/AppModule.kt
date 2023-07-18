@@ -4,11 +4,11 @@ import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.apollographql.apollo3.ApolloClient
-import com.levp.immersivedotastats.data.ApolloStratzApiClient
+import com.levp.immersivedotastats.data.repository.ApolloStratzApiClientImpl
 import com.levp.immersivedotastats.domain.database.heroesinfo.HeroDatabase
 import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepository
 import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepositoryImpl
-import com.levp.immersivedotastats.domain.network.interfaces.StratzApiClient
+import com.levp.immersivedotastats.data.remote.interfaces.StratzApiClient
 import com.levp.immersivedotastats.domain.usecases.GetUserHeroesPerformanceUseCase
 import com.levp.immersivedotastats.domain.usecases.GetUserInfoUseCase
 import com.levp.immersivedotastats.domain.usecases.GetUserRecentMatchesUseCase
@@ -53,7 +53,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideStratzApiClient(apolloClient: ApolloClient): StratzApiClient {
-        return ApolloStratzApiClient(apolloClient)
+        return ApolloStratzApiClientImpl(apolloClient)
     }
 
     @Provides

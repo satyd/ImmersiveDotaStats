@@ -1,8 +1,8 @@
-package com.levp.immersivedotastats.domain.network
+package com.levp.immersivedotastats.data.repository
 
 import com.google.gson.GsonBuilder
-import com.levp.immersivedotastats.domain.network.interfaces.HeroApi
-import com.levp.immersivedotastats.domain.network.interfaces.PlayerApi
+import com.levp.immersivedotastats.data.remote.interfaces.HeroApi
+import com.levp.immersivedotastats.data.remote.interfaces.PlayerApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

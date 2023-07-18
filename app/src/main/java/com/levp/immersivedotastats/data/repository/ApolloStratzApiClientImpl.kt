@@ -1,15 +1,18 @@
-package com.levp.immersivedotastats.data
+package com.levp.immersivedotastats.data.repository
 
 import com.apollographql.apollo3.ApolloClient
 import com.levp.AccountInfoQuery
 import com.levp.GetHeroesPerformanceQuery
 import com.levp.GetRecentMatchesQuery
-import com.levp.immersivedotastats.domain.network.dto.HeroPerformanceStat
-import com.levp.immersivedotastats.domain.network.dto.HistoryMatch
-import com.levp.immersivedotastats.domain.network.dto.UserInfo
-import com.levp.immersivedotastats.domain.network.interfaces.StratzApiClient
+import com.levp.immersivedotastats.data.remote.dto.HeroPerformanceStat
+import com.levp.immersivedotastats.data.remote.dto.HistoryMatch
+import com.levp.immersivedotastats.data.remote.dto.UserInfo
+import com.levp.immersivedotastats.data.remote.interfaces.StratzApiClient
+import com.levp.immersivedotastats.data.toHeroesPerformanceStat
+import com.levp.immersivedotastats.data.toHistoryMatch
+import com.levp.immersivedotastats.data.toUserInfo
 
-class ApolloStratzApiClient(
+class ApolloStratzApiClientImpl(
     private val apolloClient: ApolloClient
 ) : StratzApiClient {
 
