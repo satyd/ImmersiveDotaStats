@@ -1,20 +1,30 @@
 package com.levp.immersivedotastats.presentation.common
 
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.levp.immersivedotastats.domain.network.dto.HistoryMatch
 import com.levp.immersivedotastats.presentation.theme.DozenPadding
 import com.levp.immersivedotastats.presentation.theme.MediumPadding
 import com.levp.immersivedotastats.presentation.theme.SmallPadding
+import com.levp.immersivedotastats.presentation.theme.StatsTheme
 import com.levp.immersivedotastats.presentation.theme.TinyPadding
+import com.levp.immersivedotastats.utils.formatDuration
 
 @Composable
 fun TinySpacer() {
@@ -51,9 +61,11 @@ fun BrushText(symbol: String) {
 }
 
 @Composable
-fun KDAView(k: Short, d: Short, a: Short) {
-    Column() {
-        Text(text = "$k/$d/$a")
-
-    }
+fun PanelHeaderText(title: String) {
+    Text(
+        text = title,
+        fontSize = 16.sp,
+        fontWeight = FontWeight.Bold,
+        color = StatsTheme.colors.mainText
+    )
 }

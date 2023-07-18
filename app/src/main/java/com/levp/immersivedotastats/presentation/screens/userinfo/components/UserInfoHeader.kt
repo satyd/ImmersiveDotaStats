@@ -1,6 +1,5 @@
 package com.levp.immersivedotastats.presentation.screens.userinfo.components
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,34 +13,26 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.layout.wrapContentWidth
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.ExperimentalTextApi
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.rememberAsyncImagePainter
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
-import com.levp.immersivedotastats.R
-import com.levp.immersivedotastats.presentation.common.MainSpacer
 import com.levp.immersivedotastats.presentation.common.MedalView
 import com.levp.immersivedotastats.presentation.common.SmallSpacer
 import com.levp.immersivedotastats.presentation.common.TinySpacer
-import com.levp.immersivedotastats.presentation.common.WinLossText
+import com.levp.immersivedotastats.presentation.common.itemparts.WinLossText
 import com.levp.immersivedotastats.presentation.screens.userinfo.UserInfoState
-import com.levp.immersivedotastats.presentation.theme.LargePadding
-import com.levp.immersivedotastats.presentation.theme.MediumPadding
 import com.levp.immersivedotastats.presentation.theme.SmallPadding
 import com.levp.immersivedotastats.presentation.theme.StatsTheme
 
@@ -77,9 +68,11 @@ fun UserInfoHeader(
                 modifier = Modifier
                     .wrapContentWidth()
                     .fillMaxHeight()
-
             ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.wrapContentSize()
+                ) {
                     Text(
                         text = userInfo.userName,
                         fontSize = 24.sp,
@@ -101,9 +94,12 @@ fun UserInfoHeader(
                 Text(text = "Matches: ${userInfo.matches}", fontSize = 12.sp)
                 TinySpacer()
                 WinLossText(winCount = userInfo.wins, lossCount = loses)
+                TinySpacer()
             }
             Row(
-                modifier = Modifier.wrapContentHeight().padding(Dp.SmallPadding),
+                modifier = Modifier
+                    .wrapContentHeight()
+                    .padding(Dp.SmallPadding),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 MedalView(rankTier = userInfo.seasonRank)

@@ -60,8 +60,9 @@ fun ImmersiveDotaStatsTheme(
     //эта часть влияет на цвет символов статусбара
     val systemUiController = rememberSystemUiController()
     systemUiController.setStatusBarColor(
-        color = Color.Transparent
+        color = Color(0xFF967E76)
     )
+    /*
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
@@ -70,6 +71,7 @@ fun ImmersiveDotaStatsTheme(
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }
     }
+    */
     val colors = CreamBrownColors
     CompositionLocalProvider(LocalStatsColors provides colors) {
         MaterialTheme(

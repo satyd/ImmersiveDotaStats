@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.presentation.common
+package com.levp.immersivedotastats.presentation.common.itemparts
 
 import android.graphics.BitmapFactory
 import androidx.compose.foundation.layout.height
