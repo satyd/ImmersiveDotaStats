@@ -11,7 +11,7 @@ import java.io.File
 import javax.inject.Inject
 
 
-class LoadImageUseCase @Inject constructor(
+class LoadHeroImageUseCase(
     private val appContext: Context
 ) {
     fun execute(imageUrl: String, heroId: String) {

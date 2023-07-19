@@ -12,7 +12,8 @@ import com.levp.immersivedotastats.data.remote.interfaces.StratzApiClient
 import com.levp.immersivedotastats.domain.use_case.GetUserHeroesPerformanceUseCase
 import com.levp.immersivedotastats.domain.use_case.GetUserInfoUseCase
 import com.levp.immersivedotastats.domain.use_case.GetUserRecentMatchesUseCase
-import com.levp.immersivedotastats.domain.use_case.LoadImageUseCase
+import com.levp.immersivedotastats.domain.use_case.LoadHeroImageUseCase
+import com.levp.immersivedotastats.domain.use_case.LoadItemImageUseCase
 import com.levp.immersivedotastats.utils.StratzApiKey
 import dagger.Module
 import dagger.Provides
@@ -70,7 +71,9 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideGetHeroesPerformanceStatUseCase(apiClient: StratzApiClient): GetUserHeroesPerformanceUseCase {
+    fun provideGetHeroesPerformanceStatUseCase(
+        apiClient: StratzApiClient
+    ): GetUserHeroesPerformanceUseCase {
         return GetUserHeroesPerformanceUseCase(apiClient)
     }
 
@@ -78,7 +81,15 @@ object AppModule {
     @Singleton
     fun provideLoadImageUseCase(
         @ApplicationContext appContext: Context
-    ): LoadImageUseCase {
-        return LoadImageUseCase(appContext)
+    ): LoadHeroImageUseCase {
+        return LoadHeroImageUseCase(appContext)
+    }
+
+    @Provides
+    @Singleton
+    fun provideLoadItemImageUseCase(
+        @ApplicationContext appContext: Context
+    ): LoadItemImageUseCase {
+        return LoadItemImageUseCase(appContext)
     }
 }

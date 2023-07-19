@@ -4,13 +4,13 @@ import android.content.Context
 import android.util.Log
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
-import com.levp.immersivedotastats.domain.use_case.LoadImageUseCase
+import com.levp.immersivedotastats.domain.use_case.LoadHeroImageUseCase
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
 class LoadHeroImagesWorker @Inject constructor(
     @ApplicationContext appContext: Context,
-    private val loadImageUseCase: LoadImageUseCase,
+    private val loadHeroImageUseCase: LoadHeroImageUseCase,
     private val params: WorkerParameters
 ) : CoroutineWorker(appContext, params) {
 
@@ -20,7 +20,7 @@ class LoadHeroImagesWorker @Inject constructor(
             params.inputData.getString(KEY_IMAGES_URI) ?: return Result.failure()
         val heroId = params.inputData.getInt(KEY_HERO_IDS, -1) ?: return Result.failure()
 
-        loadImageUseCase.execute(heroImageUri, heroId.toString())
+        loadHeroImageUseCase.execute(heroImageUri, heroId.toString())
 
         return Result.success()
     }
