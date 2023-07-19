@@ -18,7 +18,7 @@
 ## Используемые библиотеки
 - Apollo (получение данных с StratzApi через GraphQL)
 - Retrofit (получение данных c OpenDotaApi)
-- Room (Сохранение данных о пользователях)
+- Room (Сохранение данных приложения и пользователя)
 - Dagger HILT (DI)
 - Coroutines
 - Coil
