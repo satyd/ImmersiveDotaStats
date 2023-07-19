@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.domain.usecases
+package com.levp.immersivedotastats.domain.use_case
 
 import android.content.Context
 import android.util.Log
@@ -8,10 +8,11 @@ import com.levp.immersivedotastats.domain.FileTarget
 import com.levp.immersivedotastats.data.repository.Path
 import com.levp.immersivedotastats.utils.Constants
 import java.io.File
+import javax.inject.Inject
 
 
-class LoadImageUseCase(
-    val appContext: Context
+class LoadImageUseCase @Inject constructor(
+    private val appContext: Context
 ) {
     fun execute(imageUrl: String, heroId: String) {
         val targetFile: File = File(appContext.cacheDir, "heroImg_${heroId}.jpg")
@@ -21,7 +22,5 @@ class LoadImageUseCase(
             .error(Constants.CatNotFoundUrl)
             .diskCacheStrategy(DiskCacheStrategy.DATA)
             .into(FileTarget(targetFile))
-
-        //Log.i("heheh","creating file ${targetFile.absolutePath}")
     }
 }

@@ -16,14 +16,14 @@
 - https://stratz.com/api
 
 ## Используемые библиотеки
-- Apollo
-- Retrofit
-- Room
-- Dagger / Hilt
+- Apollo (получение данных с StratzApi через GraphQL)
+- Retrofit (получение данных c OpenDotaApi)
+- Room (Сохранение данных о пользователях)
+- Dagger HILT (DI)
 - Coroutines
 - Coil
-- Glide
-- Work Manager
+- Glide (Загрузка картинок по сети и их отображение)
+- Work Manager (для начальной загрузки данных)
 
 
 ## Прочие технологии

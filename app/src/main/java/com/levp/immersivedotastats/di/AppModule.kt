@@ -9,10 +9,10 @@ import com.levp.immersivedotastats.domain.database.heroesinfo.HeroDatabase
 import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepository
 import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepositoryImpl
 import com.levp.immersivedotastats.data.remote.interfaces.StratzApiClient
-import com.levp.immersivedotastats.domain.usecases.GetUserHeroesPerformanceUseCase
-import com.levp.immersivedotastats.domain.usecases.GetUserInfoUseCase
-import com.levp.immersivedotastats.domain.usecases.GetUserRecentMatchesUseCase
-import com.levp.immersivedotastats.domain.usecases.LoadImageUseCase
+import com.levp.immersivedotastats.domain.use_case.GetUserHeroesPerformanceUseCase
+import com.levp.immersivedotastats.domain.use_case.GetUserInfoUseCase
+import com.levp.immersivedotastats.domain.use_case.GetUserRecentMatchesUseCase
+import com.levp.immersivedotastats.domain.use_case.LoadImageUseCase
 import com.levp.immersivedotastats.utils.StratzApiKey
 import dagger.Module
 import dagger.Provides

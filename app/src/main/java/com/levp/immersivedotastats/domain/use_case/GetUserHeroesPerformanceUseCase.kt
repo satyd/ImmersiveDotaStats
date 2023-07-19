@@ -1,9 +1,10 @@
-package com.levp.immersivedotastats.domain.usecases
+package com.levp.immersivedotastats.domain.use_case
 
 import com.levp.immersivedotastats.data.remote.dto.HeroPerformanceStat
 import com.levp.immersivedotastats.data.remote.interfaces.StratzApiClient
+import javax.inject.Inject
 
-class GetUserHeroesPerformanceUseCase(
+class GetUserHeroesPerformanceUseCase @Inject constructor(
     private val stratzApiClient: StratzApiClient
 ) {
     suspend fun execute(accountId: Long, isTurboEnabled: Boolean): List<HeroPerformanceStat> {

@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.Log
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
-import com.levp.immersivedotastats.domain.usecases.LoadImageUseCase
+import com.levp.immersivedotastats.domain.use_case.LoadImageUseCase
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 

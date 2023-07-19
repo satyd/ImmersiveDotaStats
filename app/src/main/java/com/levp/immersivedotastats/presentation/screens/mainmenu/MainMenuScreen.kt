@@ -51,10 +51,9 @@ fun MainMenuScreen(
         MainSpacer()
         MainMenuButton(
             onClick = {
-                viewModel.loadHeroImages(appContext)
+
             },
             text = stringResource(id = R.string.settings_btn)
         )
     }
-
 }

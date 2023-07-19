@@ -2,6 +2,7 @@ package com.levp.immersivedotastats.presentation.screens.mainmenu
 
 import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.work.Constraints
@@ -11,7 +12,7 @@ import androidx.work.workDataOf
 import com.levp.immersivedotastats.domain.LoadHeroImagesWorker
 import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepository
 import com.levp.immersivedotastats.data.repository.RetrofitInstance
-import com.levp.immersivedotastats.domain.usecases.LoadImageUseCase
+import com.levp.immersivedotastats.domain.use_case.LoadImageUseCase
 import com.levp.immersivedotastats.presentation.screens.heroesinfo.HeroInfoViewEntity
 import com.levp.immersivedotastats.data.HeroInfoMapper
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -61,12 +62,13 @@ class MainViewModel @Inject constructor(
 
     fun loadHeroImages(context: Context) {
         workManager = WorkManager.getInstance(context)
-
+        val toast = Toast.makeText(context, "Data Loaded", Toast.LENGTH_SHORT)
         viewModelScope.launch {
             Log.i("hehe", "MainVM: requesting worker to run ${heroInfoList.value.size} requests")
             for (hero in heroInfoList.value) {
                 loadImageUseCase.execute(hero.image, hero.id.toString())
             }
+            toast.show()
         }
     }
 

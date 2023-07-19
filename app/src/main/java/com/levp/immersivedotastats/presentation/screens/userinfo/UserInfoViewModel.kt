@@ -9,9 +9,9 @@ import com.levp.immersivedotastats.data.remote.dto.HeroPerformanceStat
 import com.levp.immersivedotastats.data.remote.dto.HistoryMatch
 import com.levp.immersivedotastats.data.remote.dto.UserInfo
 import com.levp.immersivedotastats.data.remote.dto.playerinfo.Profile
-import com.levp.immersivedotastats.domain.usecases.GetUserHeroesPerformanceUseCase
-import com.levp.immersivedotastats.domain.usecases.GetUserInfoUseCase
-import com.levp.immersivedotastats.domain.usecases.GetUserRecentMatchesUseCase
+import com.levp.immersivedotastats.domain.use_case.GetUserHeroesPerformanceUseCase
+import com.levp.immersivedotastats.domain.use_case.GetUserInfoUseCase
+import com.levp.immersivedotastats.domain.use_case.GetUserRecentMatchesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

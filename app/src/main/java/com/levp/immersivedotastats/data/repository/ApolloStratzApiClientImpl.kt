@@ -1,6 +1,8 @@
 package com.levp.immersivedotastats.data.repository
 
+import android.util.Log
 import com.apollographql.apollo3.ApolloClient
+import com.apollographql.apollo3.exception.ApolloException
 import com.levp.AccountInfoQuery
 import com.levp.GetHeroesPerformanceQuery
 import com.levp.GetRecentMatchesQuery
@@ -32,8 +34,18 @@ class ApolloStratzApiClientImpl(
     }
 
     override suspend fun getRecentMatches(accountId: Long): List<HistoryMatch> {
-        val recentMatches =
-            apolloClient.query(GetRecentMatchesQuery(accountId)).execute().data?.player?.matches
-        return recentMatches?.map { it?.toHistoryMatch() ?: HistoryMatch.getEmpty() } ?: emptyList()
+        return try {
+            val recentMatchesResponse =
+                apolloClient.query(GetRecentMatchesQuery(accountId)).execute()
+            val recentMatches = recentMatchesResponse.data!!.player!!.matches!!
+            recentMatches.map { it?.toHistoryMatch() ?: HistoryMatch.getEmpty() }
+        } catch (exception: ApolloException) {
+            Log.e(apolloStratzApiTag, "$exception")
+            emptyList()
+        }
+    }
+
+    companion object {
+        private const val apolloStratzApiTag = "ApolloStratzApiClient: "
     }
 }
