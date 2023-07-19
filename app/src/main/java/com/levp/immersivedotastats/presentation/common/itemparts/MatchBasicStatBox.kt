@@ -9,9 +9,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.levp.immersivedotastats.R
 import com.levp.immersivedotastats.data.remote.dto.HistoryMatch
 import com.levp.immersivedotastats.presentation.common.MedalView
 import com.levp.immersivedotastats.presentation.theme.SmallPadding
@@ -23,12 +25,14 @@ import com.levp.immersivedotastats.utils.formatDuration
 fun MatchBasicStatBox(
     historyMatch: HistoryMatch
 ) {
+    val win = stringResource(id = R.string.win)
+    val loss = stringResource(id = R.string.loss)
     with(historyMatch) {
-        val matchResult = if (isVictory) "Win" else "Loss"
+        val matchResult = if (isVictory) win else loss
         val duration = formatDuration(durationSeconds)
         Box(
             modifier = Modifier
-                .widthIn(min = 150.dp, max = 230.dp)
+                .widthIn(min = 160.dp, max = 240.dp)
                 .fillMaxHeight()
         ) {
             Text(
@@ -51,7 +55,7 @@ fun MatchBasicStatBox(
                 text = "$kills/$deaths/$assists",
                 fontSize = 14.sp,
                 modifier = Modifier
-                    .align(Alignment.TopCenter)
+                    .align(Alignment.Center)
                     .padding(Dp.SmallPadding)
             )
             MedalView(

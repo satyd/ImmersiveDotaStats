@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Immersive Dota Stats</string>
+    <string name="title_data">Данные</string>
+
+    <string name="win">Победа</string>
+    <string name="loss">Поражение</string>
+    <string name="matches">Матчи</string>
+    <string name="most_played">Самые популярные</string>
+    <string name="recent_matches">Недавние матчи</string>
+
+    <string name="player_info_btn">Игрок</string>
+    <string name="hero_info_btn">Герои</string>
+    <string name="load_data_btn">Загрузить данные</string>
+    <string name="include_turbo">Включить турбо</string>
+    <string name="settings_btn">Настройки</string>
+    <string name="load_user_btn">Получить данные</string>
+
+</resources>

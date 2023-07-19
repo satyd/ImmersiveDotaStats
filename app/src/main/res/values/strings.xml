@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">Immersive Dota Stats</string>
-      <string name="title_data">Data</string>
+    <string name="title_data">Data</string>
+
+    <string name="win">Win</string>
+    <string name="loss">Loss</string>
+    <string name="matches">Matches</string>
+    <string name="most_played">Most Played</string>
+    <string name="recent_matches">Recent Matches</string>
+
+    <string name="include_turbo">Include turbo</string>
+    <string name="player_info_btn">Player Info</string>
+    <string name="hero_info_btn">Hero Info</string>
+    <string name="load_data_btn">Load Data</string>
+    <string name="settings_btn">Settings</string>
+    <string name="load_user_btn">Load User Data</string>
+
 </resources>

@@ -7,9 +7,10 @@ import com.levp.immersivedotastats.data.remote.dto.UserInfo
 
 @Stable
 data class UserInfoState(
-    var userInfo: UserInfo,
     val isLoading: Boolean = false,
     val isTurboEnabled: Boolean = true,
+    var isUserInitialized: Boolean = false,
+    var userInfo: UserInfo,
     var userHeroesPerformance: List<HeroPerformanceStat>,
     var userRecentMatches: List<HistoryMatch>
 ) {

@@ -48,11 +48,13 @@ class UserInfoViewModel @Inject constructor(
         }
 
         mutableUiState.update {
+            val userInfo = requestUserInfo(userId)
             it.copy(
-                userInfo = requestUserInfo(userId),
+                userInfo = userInfo,
                 userHeroesPerformance = requestHeroesPerformance(userId),
                 userRecentMatches = requestMatchHistory(userId),
                 isLoading = false,
+                isUserInitialized = userInfo.matches > 0
             )
         }
     }
@@ -79,13 +81,15 @@ class UserInfoViewModel @Inject constructor(
     fun isTurboEnabledSwitch() {
         viewModelScope.launch {
             val isTurboEnabled = !uiState.value.isTurboEnabled
-            App.instance.preferencesManager.saveBoolean(IS_TURBO_ENABLED, true)
+            App.instance.preferencesManager.saveBoolean(IS_TURBO_ENABLED, isTurboEnabled)
             mutableUiState.emit(
                 uiState.value.copy(
                     isTurboEnabled = isTurboEnabled
                 )
             )
-            requestUserInfoStratz(uiState.value.userInfo.userId)
+            if (uiState.value.isUserInitialized) {
+                requestUserInfoStratz(uiState.value.userInfo.userId)
+            }
         }
     }
 
@@ -129,11 +133,12 @@ class UserInfoViewModel @Inject constructor(
 
     private fun setEmptyState(): UserInfoState {
         return UserInfoState(
-            userInfo = UserInfo.getEmpty(),
             isLoading = false,
+            isUserInitialized = false,
+            isTurboEnabled = App.instance.preferencesManager.getBoolean(IS_TURBO_ENABLED),
+            userInfo = UserInfo.getEmpty(),
             userHeroesPerformance = emptyList(),
             userRecentMatches = emptyList(),
-            isTurboEnabled = App.instance.preferencesManager.getBoolean(IS_TURBO_ENABLED)
         )
     }
 }

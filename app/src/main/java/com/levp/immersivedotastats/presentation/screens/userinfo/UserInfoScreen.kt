@@ -27,8 +27,10 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.levp.immersivedotastats.R
 import com.levp.immersivedotastats.presentation.common.MediumSpacer
 import com.levp.immersivedotastats.presentation.common.SmallSpacer
 import com.levp.immersivedotastats.presentation.screens.userinfo.components.HeroStatPanel
@@ -66,7 +68,7 @@ fun UserInfoScreen(
                 .fillMaxWidth()
                 .wrapContentHeight()
         ) {
-            Text(text = "Include turbo")
+            Text(text = stringResource(id = R.string.include_turbo))
             MediumSpacer()
             Switch(
                 checked = userInfoState.isTurboEnabled,
@@ -111,7 +113,7 @@ fun UserInfoScreen(
                 contentColor = StatsTheme.colors.mainTextLight
             )
         ) {
-            Text(text = "Get User Data")
+            Text(text = stringResource(id = R.string.load_user_btn))
         }
         SmallSpacer()
     }

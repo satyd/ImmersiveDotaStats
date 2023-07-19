@@ -20,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -28,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
+import com.levp.immersivedotastats.R
 import com.levp.immersivedotastats.presentation.common.MedalView
 import com.levp.immersivedotastats.presentation.common.SmallSpacer
 import com.levp.immersivedotastats.presentation.common.TinySpacer
@@ -91,7 +93,10 @@ fun UserInfoHeader(
                 }
                 val loses = (userInfo.matches - userInfo.wins)
                 TinySpacer()
-                Text(text = "Matches: ${userInfo.matches}", fontSize = 12.sp)
+                Text(
+                    text = "${stringResource(id = R.string.matches)}: ${userInfo.matches}",
+                    fontSize = 12.sp
+                )
                 TinySpacer()
                 WinLossText(winCount = userInfo.wins, lossCount = loses)
                 TinySpacer()

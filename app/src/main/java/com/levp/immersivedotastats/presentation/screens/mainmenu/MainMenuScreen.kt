@@ -10,8 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.levp.immersivedotastats.R
 import com.levp.immersivedotastats.presentation.NavDestinations
 import com.levp.immersivedotastats.presentation.common.MainSpacer
 import com.levp.immersivedotastats.presentation.theme.StatsTheme
@@ -32,19 +34,26 @@ fun MainMenuScreen(
     ) {
         MainMenuButton(
             onClick = { navController.navigate(NavDestinations.UserInfoScreen.path) },
-            text = "Profile"
+            text = stringResource(id = R.string.player_info_btn)
         )
         MainSpacer()
         MainMenuButton(
             onClick = { navController.navigate(NavDestinations.HeroesInfoScreen.path) },
-            text = "Heroes Info"
+            text = stringResource(id = R.string.hero_info_btn)
         )
         MainSpacer()
         MainMenuButton(
             onClick = {
                 viewModel.loadHeroImages(appContext)
             },
-            text = "Load Images"
+            text = stringResource(id = R.string.load_data_btn)
+        )
+        MainSpacer()
+        MainMenuButton(
+            onClick = {
+                viewModel.loadHeroImages(appContext)
+            },
+            text = stringResource(id = R.string.settings_btn)
         )
     }
 

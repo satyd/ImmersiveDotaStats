@@ -8,7 +8,9 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
+import com.levp.immersivedotastats.R
 import com.levp.immersivedotastats.data.remote.dto.HistoryMatch
 import com.levp.immersivedotastats.presentation.common.listitems.MatchEntryItem
 import com.levp.immersivedotastats.presentation.common.PanelHeaderText
@@ -27,7 +29,7 @@ fun RecentMatchesPanel(
             .wrapContentHeight()
             .padding(Dp.SmallPadding)
     ) {
-        PanelHeaderText(title = "Recent Matches")
+        PanelHeaderText(title = stringResource(id = R.string.recent_matches))
         TinySpacer()
         if (isLoading) {
             CircularProgressIndicator()
