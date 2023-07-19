@@ -9,25 +9,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d223134-e9bc-46cb-b7e7-c139095c81f4" name="Changes" comment="few more resources and small refactor">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/remote/dto/item/Item.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/remote/dto/item/ItemAttribute.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/remote/dto/item/ItemTmp.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/remote/dto/item/ItemWrap.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/remote/interfaces/ItemsApi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/use_case/LoadItemImageUseCase.kt" afterDir="false" />
+    <list default="true" id="bd6b5af3-45e4-4635-9105-3ed9bab734fb" name="Changes" comment="few more resources and small refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/HeroInfoMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/HeroInfoMapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/repository/RetrofitInstance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/repository/RetrofitInstance.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/di/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/di/AppModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/LoadHeroImagesWorker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/LoadHeroImagesWorker.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/use_case/LoadImageUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/use_case/LoadHeroImageUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/heroesinfo/HeroInfoViewEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/remote/dto/heroinfo/HeroInfoViewEntity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/heroesinfo/HeroesInfoEntryItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/heroesinfo/HeroesInfoEntryItem.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/heroesinfo/HeroesInfoScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/heroesinfo/HeroesInfoScreen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/heroesinfo/HeroesInfoViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/heroesinfo/HeroesInfoViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/mainmenu/MainMenuScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/mainmenu/MainMenuScreen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/mainmenu/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/mainmenu/MainViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
