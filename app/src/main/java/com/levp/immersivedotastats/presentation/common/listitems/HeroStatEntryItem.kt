@@ -11,19 +11,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.levp.immersivedotastats.data.remote.dto.HeroPerformanceStat
+import com.levp.immersivedotastats.domain.model.HeroPerformanceStat
 import com.levp.immersivedotastats.presentation.common.itemparts.HeroImage
 import com.levp.immersivedotastats.presentation.common.SmallSpacer
 import com.levp.immersivedotastats.presentation.common.TinySpacer
 import com.levp.immersivedotastats.presentation.common.itemparts.WinLossText
 import com.levp.immersivedotastats.utils.formatDateTime
+import com.levp.immersivedotastats.utils.formatHeroImageFile
 import java.io.File
 
 @Composable
 fun HeroStatEntryItem(heroStat: HeroPerformanceStat) {
     val dateTime = formatDateTime(heroStat.lastPlayed.toLong())
 
-    val imageFile = File(LocalContext.current.cacheDir, "heroImg_${heroStat.heroId}.jpg")
+    val imageFile = File(LocalContext.current.cacheDir, formatHeroImageFile(heroStat.heroId))
 
     Row(horizontalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxWidth()) {
         Row {

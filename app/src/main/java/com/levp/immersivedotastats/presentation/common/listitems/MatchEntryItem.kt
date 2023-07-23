@@ -13,7 +13,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.levp.immersivedotastats.data.remote.dto.HistoryMatch
+import com.levp.immersivedotastats.domain.model.HistoryMatch
 import com.levp.immersivedotastats.presentation.common.itemparts.HeroImage
 import com.levp.immersivedotastats.presentation.common.itemparts.MatchBasicStatBox
 import com.levp.immersivedotastats.presentation.common.TinySpacer
@@ -40,7 +40,8 @@ fun MatchEntryItem(historyMatch: HistoryMatch) {
                         fontSize = 14.sp,
                         fontWeight = FontWeight.Medium
                     )
-                    TinySpacer()
+                    Text(text = "Award: ${historyMatch.award}", fontSize = 11.sp)
+                    Text(text = "Imp: ${historyMatch.imp}", fontSize = 11.sp)
                 }
             }
             MatchBasicStatBox(historyMatch = historyMatch)

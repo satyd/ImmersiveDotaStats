@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.levp.immersivedotastats.R
-import com.levp.immersivedotastats.data.remote.dto.HistoryMatch
+import com.levp.immersivedotastats.domain.model.HistoryMatch
 import com.levp.immersivedotastats.presentation.common.MedalView
 import com.levp.immersivedotastats.presentation.theme.SmallPadding
 import com.levp.immersivedotastats.presentation.theme.StatsTheme

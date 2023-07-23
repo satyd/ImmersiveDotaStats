@@ -1,6 +1,6 @@
 package com.levp.immersivedotastats.domain.use_case
 
-import com.levp.immersivedotastats.data.remote.dto.HistoryMatch
+import com.levp.immersivedotastats.domain.model.HistoryMatch
 import com.levp.immersivedotastats.data.remote.interfaces.StratzApiClient
 import javax.inject.Inject
 

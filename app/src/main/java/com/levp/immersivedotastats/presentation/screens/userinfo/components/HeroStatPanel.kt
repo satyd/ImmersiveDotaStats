@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import com.levp.immersivedotastats.R
-import com.levp.immersivedotastats.data.remote.dto.HeroPerformanceStat
+import com.levp.immersivedotastats.domain.model.HeroPerformanceStat
 import com.levp.immersivedotastats.presentation.common.listitems.HeroStatEntryItem
 import com.levp.immersivedotastats.presentation.common.PanelHeaderText
 import com.levp.immersivedotastats.presentation.common.TinySpacer

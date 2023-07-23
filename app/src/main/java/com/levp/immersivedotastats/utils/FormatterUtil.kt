@@ -18,3 +18,7 @@ fun formatDateTime(epochSeconds: Long): String {
 fun formatDuration(seconds: Int): String {
     return seconds.seconds.toComponents { h, m, s, _ -> if (h > 0) "$h:$m:$s" else "$m:$s" }
 }
+
+fun formatHeroImageFile(heroId: String): String{
+    return "${Constants.HeroImageFilePrefix}${heroId}.jpg"
+}

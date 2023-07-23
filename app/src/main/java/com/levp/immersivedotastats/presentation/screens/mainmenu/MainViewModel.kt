@@ -13,7 +13,7 @@ import com.levp.immersivedotastats.domain.LoadHeroImagesWorker
 import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepository
 import com.levp.immersivedotastats.data.repository.RetrofitInstance
 import com.levp.immersivedotastats.domain.use_case.LoadImageUseCase
-import com.levp.immersivedotastats.data.HeroInfoMapper
+import xml.mapper.HeroInfoMapper
 import com.levp.immersivedotastats.data.remote.dto.heroinfo.HeroInfoViewEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -29,6 +29,7 @@ class MainViewModel @Inject constructor(
 ) : ViewModel() {
 
     private lateinit var workManager: WorkManager
+    val mapper = HeroInfoMapper()
 
     init {
         Log.i("hehe", "MainVM: init")
@@ -38,7 +39,6 @@ class MainViewModel @Inject constructor(
     val heroInfoList: MutableStateFlow<List<HeroInfoViewEntity>> = MutableStateFlow(emptyList())
 
     fun loadHeroes() {
-        val mapper = HeroInfoMapper()
         viewModelScope.launch {
             val response = try {
                 Log.i("hehe", "MainVM: requesting heroes response...")
@@ -54,6 +54,7 @@ class MainViewModel @Inject constructor(
                 Log.i("hehe", "MainVM: got response")
                 val list = response.body()!!
                 heroInfoList.emit(mapper.mapList(list))
+
             } else {
                 Log.w("hehe", "MainVM: Loading heroes failed! Code: ${response.code()}")
             }
@@ -62,12 +63,14 @@ class MainViewModel @Inject constructor(
 
     fun loadHeroImages(context: Context) {
         workManager = WorkManager.getInstance(context)
+
         val toast = Toast.makeText(context, "Data Loaded", Toast.LENGTH_SHORT)
         viewModelScope.launch {
             Log.i("hehe", "MainVM: requesting worker to run ${heroInfoList.value.size} requests")
             for (hero in heroInfoList.value) {
                 loadImageUseCase.execute(hero.image, hero.id.toString())
             }
+            //repository.insertAllHeroesInfo(mapper.mapListForDB(list))
             toast.show()
         }
     }

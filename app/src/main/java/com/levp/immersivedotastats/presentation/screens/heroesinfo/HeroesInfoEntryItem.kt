@@ -22,12 +22,14 @@ import com.levp.immersivedotastats.data.remote.dto.heroinfo.HeroInfoViewEntity
 import com.levp.immersivedotastats.data.repository.Path
 import com.levp.immersivedotastats.presentation.common.itemparts.HeroImage
 import com.levp.immersivedotastats.presentation.common.SmallSpacer
+import com.levp.immersivedotastats.utils.formatHeroImageFile
 import java.io.File
 
 @Composable
 fun HeroesInfoEntryItem(viewEntity: HeroInfoViewEntity) {
     val baseImgUrl = Path.BASE_URL
-    val imageFile = File(LocalContext.current.cacheDir, "heroImg_${viewEntity.id}.jpg")
+    val imageFile =
+        File(LocalContext.current.cacheDir, formatHeroImageFile(viewEntity.id.toString()))
     Row(
         modifier = Modifier
             .fillMaxWidth()

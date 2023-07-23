@@ -5,9 +5,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.levp.immersivedotastats.App
 import com.levp.immersivedotastats.data.repository.RetrofitInstance
-import com.levp.immersivedotastats.data.remote.dto.HeroPerformanceStat
-import com.levp.immersivedotastats.data.remote.dto.HistoryMatch
-import com.levp.immersivedotastats.data.remote.dto.UserInfo
+import com.levp.immersivedotastats.domain.model.HeroPerformanceStat
+import com.levp.immersivedotastats.domain.model.HistoryMatch
+import com.levp.immersivedotastats.domain.model.UserInfo
 import com.levp.immersivedotastats.data.remote.dto.playerinfo.Profile
 import com.levp.immersivedotastats.domain.use_case.GetUserHeroesPerformanceUseCase
 import com.levp.immersivedotastats.domain.use_case.GetUserInfoUseCase

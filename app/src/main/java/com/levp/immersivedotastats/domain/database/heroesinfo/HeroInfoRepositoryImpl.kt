@@ -13,5 +13,4 @@ class HeroInfoRepositoryImpl(
             dao.insertHeroInfo(it)
         }
     }
-
 }

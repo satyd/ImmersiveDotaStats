@@ -1,11 +1,11 @@
-package com.levp.immersivedotastats.data
+package xml.mapper
 
 import com.levp.AccountInfoQuery
 import com.levp.GetHeroesPerformanceQuery
 import com.levp.GetRecentMatchesQuery
-import com.levp.immersivedotastats.data.remote.dto.HeroPerformanceStat
-import com.levp.immersivedotastats.data.remote.dto.HistoryMatch
-import com.levp.immersivedotastats.data.remote.dto.UserInfo
+import com.levp.immersivedotastats.domain.model.HeroPerformanceStat
+import com.levp.immersivedotastats.domain.model.HistoryMatch
+import com.levp.immersivedotastats.domain.model.UserInfo
 import java.math.BigDecimal
 import java.math.RoundingMode
 
@@ -56,7 +56,7 @@ fun GetRecentMatchesQuery.Match.toHistoryMatch(): HistoryMatch {
             heroDamage = players?.get(0)?.heroDamage.toString(),
             heroHealing = players?.get(0)?.heroHealing.toString(),
             towerDamage = players?.get(0)?.towerDamage.toString(),
-            award = ""
+            award = players?.get(0)?.award.toString()
         )
     }
 }

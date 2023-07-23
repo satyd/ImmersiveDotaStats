@@ -1,9 +1,9 @@
 package com.levp.immersivedotastats.presentation.screens.userinfo
 
 import androidx.compose.runtime.Stable
-import com.levp.immersivedotastats.data.remote.dto.HeroPerformanceStat
-import com.levp.immersivedotastats.data.remote.dto.HistoryMatch
-import com.levp.immersivedotastats.data.remote.dto.UserInfo
+import com.levp.immersivedotastats.domain.model.HeroPerformanceStat
+import com.levp.immersivedotastats.domain.model.HistoryMatch
+import com.levp.immersivedotastats.domain.model.UserInfo
 
 @Stable
 data class UserInfoState(

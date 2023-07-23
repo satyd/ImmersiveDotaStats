@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.data.remote.dto
+package com.levp.immersivedotastats.domain.model
 
 
 data class UserInfo(
