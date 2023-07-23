@@ -1,16 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:minWidth="40dp"
-    android:minHeight="40dp"
-    android:targetCellWidth="1"
-    android:targetCellHeight="1"
-    android:maxResizeWidth="250dp"
-    android:maxResizeHeight="120dp"
+    android:minWidth="240dp"
+    android:minHeight="120dp"
+    android:targetCellWidth="4"
+    android:targetCellHeight="2"
+    android:maxResizeWidth="320dp"
+    android:maxResizeHeight="420dp"
     android:updatePeriodMillis="86400000"
-    android:description="Imm stats widget"
-    android:previewLayout="@layout/example_appwidget_preview"
-    android:initialLayout="@layout/example_loading_appwidget"
-    android:configure="com.example.android.ExampleAppWidgetConfigurationActivity"
+
+
+    android:configure="com.levp.immersivedotastats.statswidget.StatsWidgetConfigureActivity"
     android:resizeMode="horizontal|vertical"
     android:widgetCategory="home_screen"
     android:widgetFeatures="reconfigurable|configuration_optional">
 </appwidget-provider>
+
+    <!--
+        android:description="imm_stats_widget"
+        android:previewLayout="@layout/example_appwidget_preview"
+        android:initialLayout="@layout/example_loading_appwidget"
+    -->

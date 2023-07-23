@@ -1,4 +1,4 @@
-package xml.mapper
+package com.levp.immersivedotastats.data.mapper
 
 import com.levp.AccountInfoQuery
 import com.levp.GetHeroesPerformanceQuery

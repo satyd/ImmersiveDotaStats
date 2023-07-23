@@ -6,13 +6,15 @@ import com.apollographql.apollo3.exception.ApolloException
 import com.levp.AccountInfoQuery
 import com.levp.GetHeroesPerformanceQuery
 import com.levp.GetRecentMatchesQuery
+import com.levp.immersivedotastats.data.mapper.toHeroesPerformanceStat
+import com.levp.immersivedotastats.data.mapper.toHistoryMatch
+import com.levp.immersivedotastats.data.mapper.toUserInfo
 import com.levp.immersivedotastats.domain.model.HeroPerformanceStat
 import com.levp.immersivedotastats.domain.model.HistoryMatch
 import com.levp.immersivedotastats.domain.model.UserInfo
 import com.levp.immersivedotastats.data.remote.interfaces.StratzApiClient
-import xml.mapper.toHeroesPerformanceStat
-import xml.mapper.toHistoryMatch
-import xml.mapper.toUserInfo
+
+
 
 class ApolloStratzApiClientImpl(
     private val apolloClient: ApolloClient
