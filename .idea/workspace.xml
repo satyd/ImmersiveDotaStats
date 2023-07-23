@@ -11,31 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="bd6b5af3-45e4-4635-9105-3ed9bab734fb" name="Changes" comment="few more resources and small refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/HeroInfoMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/mapper/HeroInfoMapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/StratzApiMappers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/mapper/StratzApiMappers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/remote/dto/HeroPerformanceStat.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/model/HeroPerformanceStat.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/remote/dto/HistoryMatch.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/model/HistoryMatch.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/remote/dto/UserInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/model/UserInfo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/remote/interfaces/StratzApiClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/remote/interfaces/StratzApiClient.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/repository/ApolloStratzApiClientImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/repository/ApolloStratzApiClientImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/database/heroesinfo/HeroInfoEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/database/heroesinfo/HeroInfoEntity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/database/heroesinfo/HeroInfoRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/database/heroesinfo/HeroInfoRepositoryImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/use_case/GetUserHeroesPerformanceUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/use_case/GetUserHeroesPerformanceUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/use_case/GetUserInfoUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/use_case/GetUserInfoUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/use_case/GetUserRecentMatchesUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/use_case/GetUserRecentMatchesUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/use_case/LoadImageUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/domain/use_case/LoadImageUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/common/itemparts/MatchBasicStatBox.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/common/itemparts/MatchBasicStatBox.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/common/listitems/HeroStatEntryItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/common/listitems/HeroStatEntryItem.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/common/listitems/MatchEntryItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/common/listitems/MatchEntryItem.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/heroesinfo/HeroesInfoEntryItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/heroesinfo/HeroesInfoEntryItem.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/heroesinfo/HeroesInfoViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/heroesinfo/HeroesInfoViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/mainmenu/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/mainmenu/MainViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/UserInfoState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/UserInfoState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/UserInfoViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/UserInfoViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/components/HeroStatPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/components/HeroStatPanel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/components/RecentMatchesPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/presentation/screens/userinfo/components/RecentMatchesPanel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/utils/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/utils/Constants.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/utils/FormatterUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/utils/FormatterUtil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/mapper/HeroInfoMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/mapper/HeroInfoMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/mapper/StratzApiMappers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/levp/immersivedotastats/data/mapper/StratzApiMappers.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/widget_provider_info.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,11 +96,11 @@
       <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\java\com\levp\immersivedotastats\core" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\java\com\levp\immersivedotastats\data" />
       <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\java\com\levp\immersivedotastats\data\mapper" />
       <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\java\com\levp\immersivedotastats\presentation\common" />
       <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\java\com\levp\immersivedotastats\presentation\common\itemparts" />
       <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\java\com\levp\immersivedotastats\presentation\common\listitems" />
-      <recent name="D:\Android\LearnProjects\ImmersiveDotaStats\app\src\main\java\com\levp\immersivedotastats\presentation\screens\userinfo" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.levp.immersivedotastats.domain.model" />

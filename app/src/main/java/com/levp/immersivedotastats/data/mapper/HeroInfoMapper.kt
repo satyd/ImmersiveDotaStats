@@ -1,4 +1,4 @@
-package xml.mapper
+package com.levp.immersivedotastats.data.mapper
 
 import com.levp.immersivedotastats.data.remote.dto.heroinfo.HeroStatsInfoItem
 import com.levp.immersivedotastats.data.remote.dto.heroinfo.HeroInfoViewEntity

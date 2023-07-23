@@ -13,7 +13,7 @@ import com.levp.immersivedotastats.domain.LoadHeroImagesWorker
 import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepository
 import com.levp.immersivedotastats.data.repository.RetrofitInstance
 import com.levp.immersivedotastats.domain.use_case.LoadImageUseCase
-import xml.mapper.HeroInfoMapper
+import com.levp.immersivedotastats.data.mapper.HeroInfoMapper
 import com.levp.immersivedotastats.data.remote.dto.heroinfo.HeroInfoViewEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
