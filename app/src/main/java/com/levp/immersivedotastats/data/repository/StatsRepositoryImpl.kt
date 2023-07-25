@@ -1,8 +1,12 @@
-package com.levp.immersivedotastats.domain.database.heroesinfo
+package com.levp.immersivedotastats.data.repository
 
-class HeroInfoRepositoryImpl(
+import com.levp.immersivedotastats.data.database.heroesinfo.HeroInfoDao
+import com.levp.immersivedotastats.data.database.heroesinfo.HeroInfoEntity
+import com.levp.immersivedotastats.domain.repository.StatsRepository
+
+class StatsRepositoryImpl(
     private val dao: HeroInfoDao
-) : HeroInfoRepository {
+) : StatsRepository {
 
     override suspend fun insertHeroInfo(heroInfoEntity: HeroInfoEntity) {
         dao.insertHeroInfo(heroInfo = heroInfoEntity)

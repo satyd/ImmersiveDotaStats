@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import com.levp.immersivedotastats.data.remote.dto.heroinfo.HeroInfoViewEntity
-import com.levp.immersivedotastats.data.repository.Path
+import com.levp.immersivedotastats.data.Path
 import com.levp.immersivedotastats.presentation.common.itemparts.HeroImage
 import com.levp.immersivedotastats.presentation.common.SmallSpacer
 import com.levp.immersivedotastats.utils.formatHeroImageFile

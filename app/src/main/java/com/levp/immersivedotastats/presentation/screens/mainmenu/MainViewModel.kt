@@ -10,8 +10,8 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.workDataOf
 import com.levp.immersivedotastats.domain.LoadHeroImagesWorker
-import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepository
-import com.levp.immersivedotastats.data.repository.RetrofitInstance
+import com.levp.immersivedotastats.domain.repository.StatsRepository
+import com.levp.immersivedotastats.data.RetrofitInstance
 import com.levp.immersivedotastats.domain.use_case.LoadImageUseCase
 import com.levp.immersivedotastats.data.mapper.HeroInfoMapper
 import com.levp.immersivedotastats.data.remote.dto.heroinfo.HeroInfoViewEntity
@@ -24,7 +24,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val repository: HeroInfoRepository,
+    private val repository: StatsRepository,
     private val loadImageUseCase: LoadImageUseCase
 ) : ViewModel() {
 

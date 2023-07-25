@@ -2,7 +2,7 @@ package com.levp.immersivedotastats.data.mapper
 
 import com.levp.immersivedotastats.data.remote.dto.heroinfo.HeroStatsInfoItem
 import com.levp.immersivedotastats.data.remote.dto.heroinfo.HeroInfoViewEntity
-import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoEntity
+import com.levp.immersivedotastats.data.database.heroesinfo.HeroInfoEntity
 
 class HeroInfoMapper {
 

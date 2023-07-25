@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.data.repository
+package com.levp.immersivedotastats.data
 
 import com.google.gson.GsonBuilder
 import com.levp.immersivedotastats.data.remote.interfaces.HeroApi

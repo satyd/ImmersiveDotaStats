@@ -5,9 +5,9 @@ import android.content.Context
 import androidx.room.Room
 import com.apollographql.apollo3.ApolloClient
 import com.levp.immersivedotastats.data.repository.ApolloStratzApiClientImpl
-import com.levp.immersivedotastats.domain.database.heroesinfo.HeroDatabase
-import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepository
-import com.levp.immersivedotastats.domain.database.heroesinfo.HeroInfoRepositoryImpl
+import com.levp.immersivedotastats.data.database.heroesinfo.HeroDatabase
+import com.levp.immersivedotastats.domain.repository.StatsRepository
+import com.levp.immersivedotastats.data.repository.StatsRepositoryImpl
 import com.levp.immersivedotastats.data.remote.interfaces.StratzApiClient
 import com.levp.immersivedotastats.domain.use_case.GetUserHeroesPerformanceUseCase
 import com.levp.immersivedotastats.domain.use_case.GetUserInfoUseCase
@@ -37,8 +37,8 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideHeroRepository(db: HeroDatabase): HeroInfoRepository {
-        return HeroInfoRepositoryImpl(db.heroInfoDao)
+    fun provideHeroRepository(db: HeroDatabase): StatsRepository {
+        return StatsRepositoryImpl(db.heroInfoDao)
     }
 
     @Provides

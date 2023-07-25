@@ -1,4 +1,4 @@
-package com.levp.immersivedotastats.domain.database.heroesinfo
+package com.levp.immersivedotastats.data.database.heroesinfo
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

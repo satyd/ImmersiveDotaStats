@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.levp.immersivedotastats.App
-import com.levp.immersivedotastats.data.repository.RetrofitInstance
+import com.levp.immersivedotastats.data.RetrofitInstance
 import com.levp.immersivedotastats.domain.model.HeroPerformanceStat
 import com.levp.immersivedotastats.domain.model.HistoryMatch
 import com.levp.immersivedotastats.domain.model.UserInfo

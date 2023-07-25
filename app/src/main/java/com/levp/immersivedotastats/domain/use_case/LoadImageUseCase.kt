@@ -1,11 +1,10 @@
 package com.levp.immersivedotastats.domain.use_case
 
 import android.content.Context
-import android.util.Log
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.levp.immersivedotastats.domain.FileTarget
-import com.levp.immersivedotastats.data.repository.Path
+import com.levp.immersivedotastats.data.Path
 import com.levp.immersivedotastats.utils.Constants
 import com.levp.immersivedotastats.utils.formatHeroImageFile
 import java.io.File
