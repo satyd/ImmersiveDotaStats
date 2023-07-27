@@ -43,6 +43,11 @@ fun MainMenuScreen(
         )
         MainSpacer()
         MainMenuButton(
+            onClick = { navController.navigate(NavDestinations.LiveScreen.path) },
+            text = stringResource(id = R.string.live_btn)
+        )
+        MainSpacer()
+        MainMenuButton(
             onClick = {
                 viewModel.loadHeroImages(appContext)
             },

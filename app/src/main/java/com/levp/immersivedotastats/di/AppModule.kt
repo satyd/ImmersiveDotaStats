@@ -4,11 +4,12 @@ import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.apollographql.apollo3.ApolloClient
-import com.levp.immersivedotastats.data.repository.ApolloStratzApiClientImpl
+import com.apollographql.apollo3.network.okHttpClient
 import com.levp.immersivedotastats.data.database.heroesinfo.HeroDatabase
-import com.levp.immersivedotastats.domain.repository.StatsRepository
-import com.levp.immersivedotastats.data.repository.StatsRepositoryImpl
 import com.levp.immersivedotastats.data.remote.interfaces.StratzApiClient
+import com.levp.immersivedotastats.data.repository.ApolloStratzApiClientImpl
+import com.levp.immersivedotastats.data.repository.StatsRepositoryImpl
+import com.levp.immersivedotastats.domain.repository.StatsRepository
 import com.levp.immersivedotastats.domain.use_case.GetUserHeroesPerformanceUseCase
 import com.levp.immersivedotastats.domain.use_case.GetUserInfoUseCase
 import com.levp.immersivedotastats.domain.use_case.GetUserRecentMatchesUseCase
@@ -19,7 +20,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
 import javax.inject.Singleton
+
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -44,9 +47,23 @@ object AppModule {
     @Provides
     @Singleton
     fun provideApolloClient(): ApolloClient {
+        val okHttpClient: OkHttpClient = OkHttpClient.Builder()
+            .addInterceptor { chain ->
+                val original = chain.request()
+                val updated = original.newBuilder()
+                    .addHeader(
+                        "Authorization",
+                        StratzApiKey.API_KEY
+                    )
+                    .build()
+                chain.proceed(updated)
+            }
+            .build()
         return ApolloClient.Builder()
             .serverUrl("https://api.stratz.com/graphql")
-            .addHttpHeader("Authorization", StratzApiKey.API_KEY)
+            .webSocketServerUrl("wss://api.stratz.com/graphql")
+            .okHttpClient(okHttpClient)
+            //.addHttpHeader("Authorization", StratzApiKey.API_KEY)
             .build()
     }
 

@@ -62,3 +62,42 @@ query GetRecentMatches($accountId:Long!) {
         }
     }
 }
+
+query LiveMatches{
+    live {
+        matches {
+            matchId
+            radiantScore
+            direScore
+            leagueId
+            league {
+                id
+                name
+                banner
+            }
+        }
+    }
+}
+
+subscription LiveProMatches($id:Int!) {
+    matchLiveLeague(leagueId:$id) {
+        matchId
+        radiantScore
+        direScore
+        league {
+            name
+            displayName
+            imageUri
+        }
+        gameMinute
+        radiantTeam {
+            name
+            logo
+        }
+        direTeam {
+            name
+            logo
+        }
+        delay
+    }
+}
