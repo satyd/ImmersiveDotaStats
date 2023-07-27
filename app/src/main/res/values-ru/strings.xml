@@ -11,6 +11,7 @@
 
     <string name="player_info_btn">Игрок</string>
     <string name="hero_info_btn">Герои</string>
+    <string name="live_btn">Турниры</string>
     <string name="load_data_btn">Загрузить данные</string>
     <string name="include_turbo">Включить турбо</string>
     <string name="settings_btn">Настройки</string>

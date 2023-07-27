@@ -11,6 +11,7 @@
     <string name="include_turbo">Include turbo</string>
     <string name="player_info_btn">Player Info</string>
     <string name="hero_info_btn">Hero Info</string>
+    <string name="live_btn">Live Matches</string>
     <string name="load_data_btn">Load Data</string>
     <string name="settings_btn">Settings</string>
     <string name="load_user_btn">Load User Data</string>
