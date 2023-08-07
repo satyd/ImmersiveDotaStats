@@ -28,14 +28,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.levp.immersivedotastats.R
+import com.levp.immersivedotastats.presentation.NavDestinations
+import com.levp.immersivedotastats.presentation.NavigationGraph
 import com.levp.immersivedotastats.presentation.common.MediumSpacer
 import com.levp.immersivedotastats.presentation.common.SmallSpacer
 import com.levp.immersivedotastats.presentation.screens.userinfo.components.HeroStatPanel
 import com.levp.immersivedotastats.presentation.screens.userinfo.components.RecentMatchesPanel
 import com.levp.immersivedotastats.presentation.screens.userinfo.components.UserInfoHeader
+import com.levp.immersivedotastats.presentation.theme.ImmersiveDotaStatsTheme
 import com.levp.immersivedotastats.presentation.theme.SmallPadding
 import com.levp.immersivedotastats.presentation.theme.StatsTheme
 import com.levp.immersivedotastats.utils.Constants
@@ -44,6 +50,7 @@ import com.levp.immersivedotastats.utils.extensions.singleViewModel
 @SuppressWarnings("FunctionNaming")
 @Composable
 fun UserInfoScreen(
+    navController: NavHostController,
     modifier: Modifier = Modifier,
     viewModel: UserInfoViewModel = singleViewModel(),
 ) {
@@ -94,6 +101,7 @@ fun UserInfoScreen(
             RecentMatchesPanel(
                 isLoading = userInfoState.isLoading,
                 userRecentMatches = userInfoState.userRecentMatches,
+                onClick = NavigationGraph(navController).showMatchInfo
             )
         }
         SmallSpacer()
@@ -105,9 +113,10 @@ fun UserInfoScreen(
             label = { Text("Search player by ID") }
         )
         SmallSpacer()
-        Button(onClick = {
-            viewModel.loadUserInfoStratz(userId)
-        },
+        Button(
+            onClick = {
+                viewModel.loadUserInfoStratz(userId)
+            },
             colors = ButtonDefaults.buttonColors(
                 containerColor = StatsTheme.colors.mainButton,
                 contentColor = StatsTheme.colors.mainTextLight
@@ -120,3 +129,10 @@ fun UserInfoScreen(
 }
 
 
+@Preview(showBackground = true)
+@Composable
+fun UserPreview() {
+    ImmersiveDotaStatsTheme {
+        UserInfoScreen(rememberNavController())
+    }
+}

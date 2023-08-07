@@ -1,5 +1,6 @@
 package com.levp.immersivedotastats.presentation.common.listitems
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -21,14 +22,18 @@ import com.levp.immersivedotastats.presentation.theme.StatsTheme
 import java.io.File
 
 @Composable
-fun MatchEntryItem(historyMatch: HistoryMatch) {
+fun MatchEntryItem(
+    historyMatch: HistoryMatch,
+    onClick: (Long) -> Unit,
+) {
     val imageFile = File(LocalContext.current.cacheDir, "heroImg_${historyMatch.heroId}.jpg")
     with(historyMatch) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(52.dp),
-            horizontalArrangement = Arrangement.SpaceBetween
+                .height(52.dp)
+                .clickable { onClick(matchId) },
+            horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Row(modifier = Modifier.wrapContentSize()) {
                 HeroImage(imageFile = imageFile)

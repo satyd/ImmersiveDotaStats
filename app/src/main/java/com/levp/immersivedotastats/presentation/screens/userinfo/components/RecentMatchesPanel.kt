@@ -22,6 +22,7 @@ import com.levp.immersivedotastats.presentation.theme.SmallPadding
 fun RecentMatchesPanel(
     isLoading: Boolean = false,
     userRecentMatches: List<HistoryMatch>,
+    onClick: (Long) -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -40,7 +41,10 @@ fun RecentMatchesPanel(
                     .wrapContentHeight(),
             ) {
                 userRecentMatches.forEachIndexed { index, historyMatch ->
-                    MatchEntryItem(historyMatch = historyMatch)
+                    MatchEntryItem(
+                        historyMatch = historyMatch,
+                        onClick = onClick
+                    )
                     if (index != userRecentMatches.size - 1) {
                         Divider()
                     }
